@@ -18,6 +18,12 @@ public:
 	//TEXTURES
 	Image mapImg;
 	Texture mapTexture;
+	Image playerImg;
+	Texture playerTexture;
+	Image blockImg;
+	Texture blockTexture;
+
+
 
 
 
