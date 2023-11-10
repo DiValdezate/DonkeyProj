@@ -41,6 +41,7 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 	case GAMEPLAY:
 		DrawTextureEx(gm->mapTexture, {0,0},0,1, WHITE);
 		
+		
 
 		break;
 

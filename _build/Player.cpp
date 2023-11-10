@@ -45,3 +45,9 @@ Texture2D Player::GetTexture()
 {
 	return texture;
 }
+
+
+void Player::Move()
+{
+
+}

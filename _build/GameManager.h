@@ -21,6 +21,8 @@ public:
 	Texture mapTexture;
 	Image playerImgRight[3];
 	Texture playerTextureRight[3];
+	Image playerImgLeft[3];
+	Texture playerTextureLeft[3];
 	Image blockImg;
 	Texture blockTexture;
 
