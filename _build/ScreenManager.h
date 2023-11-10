@@ -5,9 +5,6 @@ class ScreenManager
 {
 public:
 
-	
-
-
 
 
 
@@ -16,8 +13,8 @@ public:
 	ScreenManager();
 
 	void ScreenTransition();
-	void ScreenLogic(CurrentScreen screen);
-	void ScreenDrawer(CurrentScreen screen);
+	void ScreenLogic(GameManager* gm);
+	void ScreenDrawer(GameManager* gm);
 
 };
 

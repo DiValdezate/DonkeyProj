@@ -7,8 +7,9 @@
 //------------------------------------------------------------------------------------
 // Variables declaration
 //------------------------------------------------------------------------------------
-
-
+GameManager gManager;
+ScreenManager screenManager;
+GameplayManager gpManager;
 
 
 
@@ -19,15 +20,16 @@ int main(void)
 {
     // Initialization
     //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+    const int screenWidth = 700;
+    const int screenHeight = 800;
 
     InitWindow(screenWidth, screenHeight, "Asteroids");
     InitAudioDevice();
 
-    GameManager gManager;
-    ScreenManager screenManager;
-    GameplayManager gpManager;
+    gManager.gameTime = 0;
+    gManager.screen = GAMEPLAY;//Change it later
+   
+
 
     //Textures initialization
     //--------------------------------------------------------------------------------------
@@ -51,7 +53,7 @@ int main(void)
     {
         // UPDATE
         //----------------------------------------------------------------------------------
-        screenManager.ScreenLogic(gManager.screen);
+        screenManager.ScreenLogic(&gManager);
 
         if(gManager.screen == GAMEPLAY)
             gpManager.GameplayLogic();
@@ -61,7 +63,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-        screenManager.ScreenDrawer(gManager.screen);
+        screenManager.ScreenDrawer(&gManager);
      
 
         ClearBackground(LIGHTGRAY);

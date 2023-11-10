@@ -10,6 +10,7 @@ class GameManager
 public:
 
 	CurrentScreen screen;
+	int gameTime;
 
 	//CHARACTERS
 	Player player;
@@ -18,8 +19,8 @@ public:
 	//TEXTURES
 	Image mapImg;
 	Texture mapTexture;
-	Image playerImg;
-	Texture playerTexture;
+	Image playerImgRight[3];
+	Texture playerTextureRight[3];
 	Image blockImg;
 	Texture blockTexture;
 

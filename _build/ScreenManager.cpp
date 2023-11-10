@@ -1,48 +1,50 @@
 #include "ScreenManager.h"
 
 
-
 ScreenManager::ScreenManager()
 {
-
+	
 
 }
 
-void ScreenManager::ScreenLogic(CurrentScreen screen)
+void ScreenManager::ScreenLogic(GameManager* gm)
 {
-	switch (screen)
+	switch (gm->screen)
 	{
-	case 0://LOGO
+	case LOGO://LOGO
 
 		break;
 
-	case 1://TITLE
+	case TITLE://TITLE
 		break;
 
-	case 2://GAMEPLAY
+	case GAMEPLAY://GAMEPLAY
 		break;
 
-	case 3://ENDING
+	case ENDING://ENDING
 		break;
 
 	}
 }
 
-void ScreenManager::ScreenDrawer(CurrentScreen screen)
+void ScreenManager::ScreenDrawer(GameManager* gm)
 {
-	switch (screen)
+	switch (gm->screen)
 	{
-	case 0://LOGO
+	case LOGO:
 
 		break;
 
-	case 1://TITLE
+	case TITLE:
 		break;
 
-	case 2://GAMEPLAY
+	case GAMEPLAY:
+		DrawTextureEx(gm->mapTexture, {0,0},0,1, WHITE);
+		
+
 		break;
 
-	case 3://ENDING
+	case ENDING:
 		break;
 
 	}
