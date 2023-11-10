@@ -6,7 +6,7 @@ Player::Player()
 	lives = 3;
 	alive = true;
 	speed = { 0 };
-	position = { (float)GetScreenWidth() / 2,(float)GetScreenHeight() / 2 };
+	position = { 0 };
 	texture = { 0 };
 	radius = 15.0f;
 	rotation = 0.0f;

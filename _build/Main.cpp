@@ -23,11 +23,8 @@ int main(void)
     const int screenWidth = 700;
     const int screenHeight = 800;
 
-    InitWindow(screenWidth, screenHeight, "Asteroids");
+    InitWindow(screenWidth, screenHeight, "DonkeyKong");
     InitAudioDevice();
-
-    gManager.gameTime = 0;
-    gManager.screen = GAMEPLAY;//Change it later
    
 
 
@@ -42,7 +39,11 @@ int main(void)
 
     //Variables initialization
     //--------------------------------------------------------------------------------------
-    
+    gManager.gameTime = 0;
+    gManager.screen = GAMEPLAY;//Change it later
+
+    gManager.player.SetTexture(&gManager.playerTextureRight[0]);
+    gManager.player.SetPosition({ screenWidth / 2,screenHeight / 2 });
 
 
     SetTargetFPS(60);
