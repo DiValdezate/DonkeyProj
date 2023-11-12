@@ -44,3 +44,8 @@ void GameManager::InitTextures()
 
 }
 
+
+void GameManager::LoadMap()
+{
+
+}

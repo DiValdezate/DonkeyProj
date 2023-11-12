@@ -264,13 +264,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Brick.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameplayManager.h" />
+    <ClInclude Include="MapElements.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ScreenManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Brick.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameplayManager.cpp" />

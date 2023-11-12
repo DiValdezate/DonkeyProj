@@ -43,7 +43,7 @@ int main(void)
     gManager.screen = GAMEPLAY;//Change it later
 
     gManager.player.SetTexture(&gManager.playerTextureRight[0]);
-    gManager.player.SetPosition({ screenWidth / 2,screenHeight / 2 });
+    gManager.player.SetPosition({ 200 , 745 });
 
 
     SetTargetFPS(60);
@@ -60,11 +60,17 @@ int main(void)
             gpManager.GameplayLogic();
 
 
+
+
+
+
         // DRAW
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
         screenManager.ScreenDrawer(&gManager);
+
+
+
      
 
         ClearBackground(LIGHTGRAY);
