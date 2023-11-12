@@ -1,4 +1,18 @@
 ﻿  GameManager.cpp
-C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(56,74): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(56,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(55,74): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(55,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(64,84): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(64,60): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(69,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(69,18): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(74,79): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(74,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(85,86): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(85,62): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(90,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(90,18): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(97,57): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(97,19): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(104,79): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(104,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   DonkeyProj.vcxproj -> C:\Dev\PACS\DonkeyProj\_bin\Debug\DonkeyProj.exe
