@@ -2,6 +2,8 @@
 #include <raylib.h>
 #include "Player.h"
 #include "Enemy.h"
+#include "Brick.h"
+#include <vector>
 
 enum CurrentScreen { LOGO, TITLE, GAMEPLAY, ENDING };
 
@@ -10,13 +12,19 @@ class GameManager
 public:
 
 	CurrentScreen screen;
+
 	int gameTime;
 
-	//CHARACTERS
+
+	//Characters
 	Player player;
 	Enemy enemy;
+	Brick test;
 
-	//TEXTURES
+	//Map
+	std::vector<Brick> bricks;
+
+	//Textures
 	Image mapImg;
 	Texture mapTexture;
 	Image playerImgRight[3];

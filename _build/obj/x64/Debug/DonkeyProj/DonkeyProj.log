@@ -1,2 +1,4 @@
-﻿  Brick.cpp
+﻿  GameManager.cpp
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(56,74): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\GameManager.cpp(56,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   DonkeyProj.vcxproj -> C:\Dev\PACS\DonkeyProj\_bin\Debug\DonkeyProj.exe

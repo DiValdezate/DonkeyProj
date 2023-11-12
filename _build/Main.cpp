@@ -13,6 +13,7 @@ GameplayManager gpManager;
 
 
 
+
 //------------------------------------------------------------------------------------
 // Program main entry point
 //------------------------------------------------------------------------------------
@@ -44,7 +45,8 @@ int main(void)
 
     gManager.player.SetTexture(&gManager.playerTextureRight[0]);
     gManager.player.SetPosition({ 200 , 745 });
-
+    gManager.LoadMap();
+    
 
     SetTargetFPS(60);
     //--------------------------------------------------------------------------------------
@@ -68,7 +70,8 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
         screenManager.ScreenDrawer(&gManager);
-
+        DrawRectangle(gManager.test.hitBox.x, gManager.test.hitBox.y, gManager.test.hitBox.width, gManager.test.hitBox.height, RED);
+        DrawCircle(gManager.test.position.x, gManager.test.position.y, 10, WHITE);
 
 
      

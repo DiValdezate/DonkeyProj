@@ -1,11 +1,12 @@
 #include "GameManager.h"
 
-GameManager::GameManager():player(),enemy()
+GameManager::GameManager():player()
 {
 
 	screen = LOGO;
-	gameTime = 0;
 
+	gameTime = 0;
+	Brick test;
 
 	mapImg = { 0 };
 	mapTexture = { 0 };
@@ -47,5 +48,15 @@ void GameManager::InitTextures()
 
 void GameManager::LoadMap()
 {
+	Brick aux(0, 0);
+	//First floor, height = screenHeight - brick height
+	for (int i = 0; i < (GetScreenWidth() / aux.hitBox.width); i++)
+	{
+
+		Brick brick(i*aux.hitBox.width + aux.hitBox.width/2, GetScreenHeight() - aux.hitBox.height / 2);
+		bricks.push_back(brick);
+
+
+	}
 
 }
