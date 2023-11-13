@@ -8,6 +8,9 @@ GameManager::GameManager():player()
 	gameTime = 0;
 	framesCounter = 0;
 	framesSpeed = 0;
+	currentFrame = 0;
+	frameRec = { 0 };
+
 
 	mapImg = { 0 };
 	mapTexture = { 0 };

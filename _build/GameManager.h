@@ -16,7 +16,8 @@ public:
 	int gameTime;
 	int framesCounter;
 	int framesSpeed;
-
+	int currentFrame;
+	Rectangle frameRec;
 
 	//Characters
 	Player player;
