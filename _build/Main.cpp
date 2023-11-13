@@ -43,7 +43,7 @@ int main(void)
     gManager.gameTime = 0;
     gManager.screen = GAMEPLAY;//Change it later
 
-    gManager.player.SetTexture(&gManager.playerTextureRight[0]);
+    gManager.player.SetTexture(&gManager.playerTextRight);
     gManager.player.SetPosition({ 200 , 745 });
     gManager.LoadMap();
     
@@ -59,7 +59,7 @@ int main(void)
         screenManager.ScreenLogic(&gManager);
 
         if(gManager.screen == GAMEPLAY)
-            gpManager.GameplayLogic();
+            gpManager.GameplayLogic(&gManager);
 
 
 
@@ -70,8 +70,8 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
         screenManager.ScreenDrawer(&gManager);
-        DrawRectangle(gManager.test.hitBox.x, gManager.test.hitBox.y, gManager.test.hitBox.width, gManager.test.hitBox.height, RED);
-        DrawCircle(gManager.test.position.x, gManager.test.position.y, 10, WHITE);
+        DrawRectangle((int)gManager.test.hitBox.x, (int)gManager.test.hitBox.y, (int)gManager.test.hitBox.width, (int)gManager.test.hitBox.height, RED);
+        DrawCircle((int)gManager.test.position.x, (int)gManager.test.position.y, 10, WHITE);
 
 
      

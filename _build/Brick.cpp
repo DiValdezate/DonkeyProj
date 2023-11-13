@@ -1,6 +1,6 @@
 #include "Brick.h"
 
-Brick::Brick(int x, int y)
+Brick::Brick(float x, float y)
 {
 	position.x = x;
 	position.y = y;

@@ -1,4 +1,6 @@
 #pragma once
+#include "GameManager.h"
+
 class GameplayManager
 {
 public:
@@ -11,7 +13,9 @@ public:
 
 	GameplayManager();
 
-	void GameplayLogic();
+	void GameplayLogic(GameManager* gm);
+	void UpdatePlayerAnim(GameManager* gm);
+
 
 };
 

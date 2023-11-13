@@ -1,6 +1,9 @@
 #pragma once
 #include <raylib.h>
 
+#define PLAYER_MAX_SPEED 4
+
+
 class Player
 {
 	int lives;
@@ -8,7 +11,7 @@ class Player
 	Vector2 speed;
 	Vector2 position;
 	Texture2D texture;
-	float radius;
+	Rectangle hitBox;
 	float rotation;
 	bool moving;
 	
@@ -27,14 +30,15 @@ public:
 	void SetTexture(Texture2D* texture);
 
 	float GetRotation();
-	void SetRotation(float rotation);
+	void SetRotation(float rotation);	
 
-	float GetRadius();
+	void SetHitBox(float x, float y, float width, float height);
+	void UpdateHitBox();
 
 	bool isAlive();
 	void Kill();
 	void Hit();
-	void Move();
+	void Move(KeyboardKey key);
 	void TurnLeft();
 	void TurnRight();
 	void Moving(bool value);

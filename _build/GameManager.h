@@ -14,6 +14,8 @@ public:
 	CurrentScreen screen;
 
 	int gameTime;
+	int framesCounter;
+	int framesSpeed;
 
 
 	//Characters
@@ -27,12 +29,10 @@ public:
 	//Textures
 	Image mapImg;
 	Texture mapTexture;
-	Image playerImgRight[3];
-	Texture playerTextureRight[3];
-	Image playerImgLeft[3];
-	Texture playerTextureLeft[3];
-	Image blockImg;
-	Texture blockTexture;
+	Image playerImg;
+	Texture2D playerTextRight;
+	Texture2D playerTextLeft;
+
 
 
 

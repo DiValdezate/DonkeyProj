@@ -7,5 +7,5 @@ public:
 
 	Brick();
 
-	Brick(int x, int y);
+	Brick(float x, float y);
 };
