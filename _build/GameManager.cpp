@@ -56,7 +56,7 @@ void GameManager::LoadMap()
 		bricks.push_back(brick);
 	}
 
-	//Second floor, gap is half the width of a block
+	//Second floor
 	for (int i = 0; i < (GetScreenWidth() / aux.hitBox.width); i++)
 	{
 		if (i == 0)
@@ -90,12 +90,18 @@ void GameManager::LoadMap()
 			Brick brick(i * aux.hitBox.width, GetScreenHeight() - 21.0f * (aux.hitBox.height / 2));
 			bricks.push_back(brick);
 		}
-		else if (i == 3 || i == 10)
+		else if (i == 3 || i == 10 || i == 9)
 		{
+			if (i == 9)
+			{
+				Brick brick(i * aux.hitBox.width, GetScreenHeight() - 21.0f * (aux.hitBox.height / 2));
+				bricks.push_back(brick);
+			}
 			if (i == 10)
 			{
-				//DIBUJAR EL HUECO
-
+				Brick brick((i + 1)* aux.hitBox.width, GetScreenHeight() - 21.0f * (aux.hitBox.height / 2));
+				bricks.push_back(brick);
+	
 			}
 		}
 		else
@@ -106,8 +112,41 @@ void GameManager::LoadMap()
 		}
 	}
 
-	
+	//Fourth floor
+	for (int i = 0; i < (GetScreenWidth() / aux.hitBox.width); i++)
+	{
+		if (i != 6 && i != 7)
+		{
+			Brick brick(i * aux.hitBox.width + aux.hitBox.width / 2, GetScreenHeight() - 30.9f * aux.hitBox.height / 2);
+			bricks.push_back(brick);
+		}
+	}
 
+	//Fifth floor
+	for (int i = 0; i < (GetScreenWidth() / aux.hitBox.width); i++)
+	{
+		if (i == 0)
+		{
+			Brick brick((aux.hitBox.width + aux.hitBox.width / 2) / 2 + 13, GetScreenHeight() - 40.9f * (aux.hitBox.height / 2));
+			bricks.push_back(brick);
+		}
+		else if (i == (GetScreenWidth() / aux.hitBox.width) - 1)
+		{
+			Brick brick(i * aux.hitBox.width, GetScreenHeight() - 40.9f * (aux.hitBox.height / 2));
+			bricks.push_back(brick);
+		}
+		else
+		{
+			Brick brick(i * aux.hitBox.width + aux.hitBox.width / 2, GetScreenHeight() - 40.9f * (aux.hitBox.height / 2));
+			bricks.push_back(brick);
 
+		}
+	}
 
+	//Sixth floor
+	for (int i = 6; i < 9; i++)
+	{
+		Brick brick(i * aux.hitBox.width, GetScreenHeight() - 49.0f * (aux.hitBox.height / 2));
+		bricks.push_back(brick);
+	}
 }

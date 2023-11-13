@@ -47,7 +47,6 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 			Brick aux = gm->bricks.at(i);
 			DrawRectangle(aux.hitBox.x, aux.hitBox.y, aux.hitBox.width, aux.hitBox.height, WHITE);
 	
-			std::cout << gm->bricks.size();
 		}
 
 
