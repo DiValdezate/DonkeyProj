@@ -3,9 +3,11 @@
 
 #define PLAYER_MAX_SPEED 4
 
+enum Orientation { RIGHT, LEFT, UP }; //Where is the player facing at.
 
 class Player
 {
+	Orientation orientation;
 	int lives;
 	bool alive;
 	Vector2 speed;
@@ -34,6 +36,8 @@ public:
 
 	void SetHitBox(float x, float y, float width, float height);
 	void UpdateHitBox();
+
+	Orientation GetOrientation();
 
 	bool isAlive();
 	void Kill();

@@ -31,8 +31,8 @@ public:
 	Image mapImg;
 	Texture mapTexture;
 	Image playerImg;
-	Texture2D playerTextRight;
-	Texture2D playerTextLeft;
+	Texture2D playerTextRight[4];
+	Texture2D playerTextLeft[4];
 
 
 

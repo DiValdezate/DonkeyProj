@@ -43,7 +43,7 @@ int main(void)
     gManager.gameTime = 0;
     gManager.screen = GAMEPLAY;//Change it later
 
-    gManager.player.SetTexture(&gManager.playerTextRight);
+    gManager.player.SetTexture(&gManager.playerTextRight[0]);
     gManager.player.SetPosition({ 200 , 745 });
     gManager.LoadMap();
     

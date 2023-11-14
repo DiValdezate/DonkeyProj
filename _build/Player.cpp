@@ -4,6 +4,7 @@
 Player::Player()
 {
 	lives = 3;
+	orientation = RIGHT;
 	alive = true;
 	speed = { 0 };
 	position = { 0 };
@@ -56,6 +57,11 @@ void Player::SetHitBox(float x, float y, float width, float height)
 	this->hitBox.height = height;
 }
 
+Orientation Player::GetOrientation()
+{
+	return orientation;
+}
+
 
 void Player::UpdateHitBox()
 {
@@ -69,9 +75,11 @@ void Player::Move(KeyboardKey key)
 	{
 	case KEY_RIGHT:
 		position.x += PLAYER_MAX_SPEED;
+		orientation = RIGHT;
 			break;
 	case KEY_LEFT:
 		position.x -= PLAYER_MAX_SPEED;
+		orientation = LEFT;
 	}
 	
 }

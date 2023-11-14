@@ -15,8 +15,8 @@ GameManager::GameManager():player()
 	mapImg = { 0 };
 	mapTexture = { 0 };
 	playerImg = { 0 };
-	playerTextRight = { 0 };
-	playerTextLeft = { 0 };
+	playerTextRight[4] = {0};
+	playerTextLeft[4] = {0};
 
 
 
@@ -27,8 +27,14 @@ void GameManager::InitTextures()
 	mapImg = LoadImage("resources/Maps/Custom_L2.png");
 	mapTexture = LoadTextureFromImage(mapImg);
 	
-	playerTextRight = LoadTexture("resources/Characters/Mario_walk_right.png");
-	playerTextLeft = LoadTexture("resources/Characters/Mario_walk_left.png");
+	playerTextRight[0] = LoadTexture("resources/Characters/Right.png");
+	playerTextRight[1] = LoadTexture("resources/Characters/Right1.png");
+	playerTextRight[2] = LoadTexture("resources/Characters/Right2.png");
+	playerTextRight[3] = LoadTexture("resources/Characters/Right1.png");
+	playerTextLeft[0] = LoadTexture("resources/Characters/Left.png");
+	playerTextLeft[1] = LoadTexture("resources/Characters/Left1.png");
+	playerTextLeft[2] = LoadTexture("resources/Characters/Left2.png");
+	playerTextLeft[3] = LoadTexture("resources/Characters/Left1.png");
 
 }
 
