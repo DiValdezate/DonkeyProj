@@ -1,2 +1,7 @@
-﻿  GameplayManager.cpp
+﻿  GameManager.cpp
+  GameplayManager.cpp
+  Main.cpp
+  Player.cpp
+  ScreenManager.cpp
+  Generando código...
   DonkeyProj.vcxproj -> C:\Dev\PACS\DonkeyProj\_bin\Debug\DonkeyProj.exe

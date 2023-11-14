@@ -6,13 +6,14 @@ Player::Player()
 	lives = 3;
 	orientation = RIGHT;
 	alive = true;
-	speed = { 0 };
+	speed = 0;
 	position = { 0 };
 	texture = { 0 };	
 	rotation = 0.0f;
 	moving = false;
 	hitBox.width = 10;
 	hitBox.height = 15;
+	canJump = true;
 };
 
 void Player::SetLives(int lives)
@@ -76,10 +77,18 @@ void Player::Move(KeyboardKey key)
 	case KEY_RIGHT:
 		position.x += PLAYER_MAX_SPEED;
 		orientation = RIGHT;
-			break;
+		break;
 	case KEY_LEFT:
 		position.x -= PLAYER_MAX_SPEED;
 		orientation = LEFT;
+		break;
+	case KEY_SPACE:
+		if (canJump)
+		{
+			speed = -PLAYER_JUMP_FORCE;
+			canJump = false;
+		}
+
 	}
 	
 }

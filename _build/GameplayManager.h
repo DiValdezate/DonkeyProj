@@ -15,7 +15,7 @@ public:
 
 	void GameplayLogic(GameManager* gm);
 	void UpdatePlayerAnim(GameManager* gm, KeyboardKey key);
-
+	void UpdatePlayer(GameManager* gm);
 
 };
 

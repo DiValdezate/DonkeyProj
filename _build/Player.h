@@ -2,6 +2,7 @@
 #include <raylib.h>
 
 #define PLAYER_MAX_SPEED 4
+#define PLAYER_JUMP_FORCE 4
 
 enum Orientation { RIGHT, LEFT, UP }; //Where is the player facing at.
 
@@ -10,12 +11,13 @@ class Player
 	Orientation orientation;
 	int lives;
 	bool alive;
-	Vector2 speed;
+	float speed;
 	Vector2 position;
 	Texture2D texture;
 	Rectangle hitBox;
 	float rotation;
 	bool moving;
+	bool canJump;
 	
 
 public:
@@ -39,6 +41,7 @@ public:
 
 	Orientation GetOrientation();
 
+
 	bool isAlive();
 	void Kill();
 	void Hit();
@@ -47,6 +50,5 @@ public:
 	void TurnRight();
 	void Moving(bool value);
 	bool IsMoving();
-
 };
 
