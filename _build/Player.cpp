@@ -30,7 +30,8 @@ int Player::GetLives()
 
 void Player::SetPosition(Vector2 position)
 {
-	this->position = position;
+	this->position.x = position.x;
+	this->position.y = position.y;
 }
 
 
@@ -56,6 +57,26 @@ void Player::SetHitBox(float x, float y, float width, float height)
 	this->hitBox.y = y;
 	this->hitBox.width = width;
 	this->hitBox.height = height;
+}
+
+void Player::SetSpeed(float speed)
+{
+	this->speed = speed;
+}
+
+float Player::GetSpeed()
+{
+	return speed;
+}
+
+void Player::CanJump(bool value)
+{
+	this->canJump = value;
+}
+
+bool Player::GetCanJump()
+{
+	return canJump;
 }
 
 Orientation Player::GetOrientation()

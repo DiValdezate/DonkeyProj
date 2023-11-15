@@ -40,7 +40,7 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 
 	case GAMEPLAY:
 		DrawTextureEx(gm->mapTexture, {0,0},0,1, WHITE);
-		DrawTextureEx(gm->player.GetTexture(), gm->player.GetPosition(), 1, 1, WHITE);
+		DrawTextureEx(gm->player.GetTexture(), { gm->player.GetPosition().x, gm->player.GetPosition().y - gm->player.GetTexture().height }, 1, 1, WHITE);
 	
 		
 

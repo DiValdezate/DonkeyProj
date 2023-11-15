@@ -2,7 +2,8 @@
 #include <raylib.h>
 
 #define PLAYER_MAX_SPEED 4
-#define PLAYER_JUMP_FORCE 4
+#define PLAYER_JUMP_FORCE 40
+#define GFORCE 4
 
 enum Orientation { RIGHT, LEFT, UP }; //Where is the player facing at.
 
@@ -38,6 +39,12 @@ public:
 
 	void SetHitBox(float x, float y, float width, float height);
 	void UpdateHitBox();
+
+	void SetSpeed(float speed);
+	float GetSpeed();
+
+	void CanJump(bool value);
+	bool GetCanJump();
 
 	Orientation GetOrientation();
 

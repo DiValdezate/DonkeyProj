@@ -7,9 +7,8 @@ GameplayManager::GameplayManager()
 }
 
 void GameplayManager::GameplayLogic(GameManager* gm)
-{
-	
-	UpdatePlayerAnim(gm,KEY_ZERO);
+{	
+	UpdatePlayerAnim(gm, KEY_ZERO);
 	UpdatePlayer(gm);
 
 
@@ -37,6 +36,7 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 	case KEY_LEFT:
 		gm->player.SetTexture(&gm->playerTextLeft[gm->currentFrame]);
 		break;
+
 	default:
 		switch (gm->player.GetOrientation())
 		{
@@ -71,10 +71,32 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 	}
 
 	bool hitObstacle = 0;
-	int itemsLenght = sizeof(gm->bricks) / sizeof(gm->bricks[0]);
+	Player* player = &gm->player;
+	Texture2D* playerText= &gm->player.GetTexture();
 
 	for (int i = 0; i < gm->bricks.size(); i++)
 	{
-
+		Brick* brick = &gm->bricks.at(i);
+		
+		if (brick->hitBox.x <= player->GetPosition().x &&
+			brick->hitBox.x + brick->hitBox.width >= player->GetPosition().x &&
+			brick->hitBox.y >= player->GetPosition().y  &&
+			brick->hitBox.y <= player->GetPosition().y + player->GetSpeed())
+		{
+			hitObstacle = true;
+			player->SetSpeed(0.0f);
+			player->SetPosition({ player->GetPosition().x , brick->hitBox.y});
+		}	
 	}
+
+	if (hitObstacle == false)
+	{
+		player->SetPosition({ player->GetPosition().x , player->GetPosition().y + player->GetSpeed() * 0.25f });
+		player->SetSpeed(player->GetSpeed() + GFORCE);
+		player->CanJump(false);		
+	}
+	else
+	{
+		player->CanJump(true);
+	}	
 }
