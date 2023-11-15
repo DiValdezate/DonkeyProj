@@ -10,7 +10,7 @@ void GameplayManager::GameplayLogic(GameManager* gm)
 {	
 	UpdatePlayerAnim(gm, KEY_ZERO);
 	UpdatePlayer(gm);
-
+	std::cout << gm->player.GetOnLadder();
 
 
 
@@ -36,7 +36,6 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 	case KEY_LEFT:
 		gm->player.SetTexture(&gm->playerTextLeft[gm->currentFrame]);
 		break;
-
 	default:
 		switch (gm->player.GetOrientation())
 		{
@@ -48,6 +47,8 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 			break;
 		}
 	}	
+
+
 	gm->framesCounter++;
 
 }
@@ -73,7 +74,7 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 	bool hitObstacle = 0;
 	Player* player = &gm->player;
 	Texture2D* playerText= &gm->player.GetTexture();
-
+	//Check if grounded
 	for (int i = 0; i < gm->bricks.size(); i++)
 	{
 		Brick* brick = &gm->bricks.at(i);
@@ -99,4 +100,22 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 	{
 		player->CanJump(true);
 	}	
+
+	//Check if on ladder
+	player->SetOnLadder(false);
+	for (int i = 0; i < gm->ladders.size(); i++)
+	{
+		Ladder* ld = &gm->ladders.at(i);
+
+		if (ld->hitBox.x <= player->GetPosition().x &&
+			ld->hitBox.x + ld->hitBox.width >= player->GetPosition().x &&
+			ld->hitBox.y <= player->GetPosition().y &&
+			ld->hitBox.y + ld->hitBox.height >= player->GetPosition().y)
+		{
+			player->SetOnLadder(true);
+		}
+		
+	}
+
+
 }

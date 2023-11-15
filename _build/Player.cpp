@@ -14,6 +14,7 @@ Player::Player()
 	hitBox.width = 10;
 	hitBox.height = 15;
 	canJump = true;
+	onLadder = false;
 };
 
 void Player::SetLives(int lives)
@@ -79,6 +80,16 @@ bool Player::GetCanJump()
 	return canJump;
 }
 
+void Player::SetOnLadder(bool value)
+{
+	onLadder = value;
+}
+
+bool Player::GetOnLadder()
+{
+	return onLadder;
+}
+
 Orientation Player::GetOrientation()
 {
 	return orientation;
@@ -109,7 +120,10 @@ void Player::Move(KeyboardKey key)
 			speed = -PLAYER_JUMP_FORCE;
 			canJump = false;
 		}
-
+		break;
+		//case KEY_UP:
 	}
+		
+	
 	
 }

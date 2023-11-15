@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Brick.h"
+#include "Ladder.h"
 #include <vector>
 
 enum CurrentScreen { LOGO, TITLE, GAMEPLAY, ENDING };
@@ -22,10 +23,11 @@ public:
 	//Characters
 	Player player;
 	Enemy enemy;
-	Brick test;
+
 
 	//Map
 	std::vector<Brick> bricks;
+	std::vector<Ladder> ladders;
 
 	//Textures
 	Image mapImg;

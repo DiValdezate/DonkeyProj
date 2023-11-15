@@ -268,6 +268,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameplayManager.h" />
+    <ClInclude Include="Ladder.h" />
     <ClInclude Include="MapElements.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ScreenManager.h" />
@@ -277,6 +278,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
+    <ClCompile Include="Ladder.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScreenManager.cpp" />

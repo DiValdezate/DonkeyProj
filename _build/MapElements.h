@@ -5,7 +5,6 @@
 class MapElements
 {
 public:
-
 	Vector2 position;
 	Rectangle hitBox;
 };

@@ -42,12 +42,22 @@ void GameManager::InitTextures()
 void GameManager::LoadMap()
 {
 	Brick aux(0, 0);
-	//First floor, height = screenHeight - brick height
+	Ladder auxL(0, 0);
+
+	//First floor, bricks
 	for (int i = 0; i < (GetScreenWidth() / aux.hitBox.width); i++)
 	{
 		Brick brick(i*aux.hitBox.width + aux.hitBox.width/2, (float)GetScreenHeight() - aux.hitBox.height / 2);
 		bricks.push_back(brick);
 	}
+
+	//First floor, ladders
+	Ladder ld1(87, 720), ld2(260, 720), ld3(440, 720), ld4(615, 720);
+	ladders.push_back(ld1);
+	ladders.push_back(ld2);
+	ladders.push_back(ld3);
+	ladders.push_back(ld4);
+
 
 	//Second floor
 	for (int i = 0; i < (GetScreenWidth() / aux.hitBox.width); i++)
@@ -69,6 +79,13 @@ void GameManager::LoadMap()
 
 		}
 	}
+
+	//Second floor, ladders
+	Ladder ld5(210, 600), ld6(460, 600);
+	ladders.push_back(ld5);
+	ladders.push_back(ld6);
+
+
 
 	//Third floor
 	for (int i = 0; i < (GetScreenWidth() / aux.hitBox.width); i++)
@@ -104,6 +121,13 @@ void GameManager::LoadMap()
 
 		}
 	}
+	//Third floor, ladders
+	Ladder ld7(87, 480), ld8(260, 480), ld9(440, 480), ld10(615, 480);
+	ladders.push_back(ld7);
+	ladders.push_back(ld8);
+	ladders.push_back(ld9);
+	ladders.push_back(ld10);
+
 
 	//Fourth floor
 	for (int i = 0; i < (GetScreenWidth() / aux.hitBox.width); i++)
@@ -135,6 +159,11 @@ void GameManager::LoadMap()
 
 		}
 	}
+	//Fifth floor, ladders
+	Ladder ld11(67, 350), ld12(640, 350);
+	ladders.push_back(ld11);
+	ladders.push_back(ld12);
+
 
 	//Sixth floor
 	for (int i = 6; i < 9; i++)
@@ -142,6 +171,12 @@ void GameManager::LoadMap()
 		Brick brick(i * aux.hitBox.width, (float)GetScreenHeight() - 49.0f * (aux.hitBox.height / 2));
 		bricks.push_back(brick);
 	}
+	//Sixth floor, ladders
+	Ladder ld13(210, 190, LADDER_WIDTH, LADDER_HEIGHT * 2 - 60), ld14(260, 190, LADDER_WIDTH, LADDER_HEIGHT * 2 - 60), ld15(415, 230, LADDER_WIDTH, LADDER_HEIGHT/2);
+	ladders.push_back(ld13);
+	ladders.push_back(ld14);
+	ladders.push_back(ld15);
+
 }
 
 

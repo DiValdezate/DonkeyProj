@@ -19,7 +19,7 @@ class Player
 	float rotation;
 	bool moving;
 	bool canJump;
-	
+	bool onLadder;
 
 public:
 	
@@ -45,6 +45,10 @@ public:
 
 	void CanJump(bool value);
 	bool GetCanJump();
+
+	void SetOnLadder(bool value);
+	bool GetOnLadder();
+
 
 	Orientation GetOrientation();
 

@@ -72,8 +72,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
         screenManager.ScreenDrawer(&gManager);
-        DrawRectangle((int)gManager.test.hitBox.x, (int)gManager.test.hitBox.y, (int)gManager.test.hitBox.width, (int)gManager.test.hitBox.height, RED);
-        DrawCircle((int)gManager.test.position.x, (int)gManager.test.position.y, 10, WHITE);
+
 
 
      
