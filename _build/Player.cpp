@@ -15,6 +15,8 @@ Player::Player()
 	hitBox.height = 15;
 	canJump = true;
 	onLadder = false;
+	ladder = NULL;
+	
 };
 
 void Player::SetLives(int lives)
@@ -80,9 +82,10 @@ bool Player::GetCanJump()
 	return canJump;
 }
 
-void Player::SetOnLadder(bool value)
+void Player::SetOnLadder(bool value, Ladder* ladder)
 {
 	onLadder = value;
+	this->ladder = ladder;
 }
 
 bool Player::GetOnLadder()
@@ -106,11 +109,11 @@ void Player::Move(KeyboardKey key)
 {
 	switch (key)
 	{
-	case KEY_RIGHT:
+	case KEY_RIGHT:		
 		position.x += PLAYER_MAX_SPEED;
 		orientation = RIGHT;
 		break;
-	case KEY_LEFT:
+	case KEY_LEFT:		
 		position.x -= PLAYER_MAX_SPEED;
 		orientation = LEFT;
 		break;
@@ -121,7 +124,14 @@ void Player::Move(KeyboardKey key)
 			canJump = false;
 		}
 		break;
-		//case KEY_UP:
+	case KEY_UP:
+		if (onLadder)
+			position.y -= PLAYER_MAX_SPEED;
+		break;
+	case KEY_DOWN:
+		if (onLadder && position.y <= ladder->hitBox.y + ladder->hitBox.height - 20)
+			position.y += PLAYER_MAX_SPEED;
+		break;
 	}
 		
 	

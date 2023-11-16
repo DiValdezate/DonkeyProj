@@ -10,7 +10,6 @@ void GameplayManager::GameplayLogic(GameManager* gm)
 {	
 	UpdatePlayerAnim(gm, KEY_ZERO);
 	UpdatePlayer(gm);
-	std::cout << gm->player.GetOnLadder();
 
 
 
@@ -27,7 +26,7 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 
 	if (gm->currentFrame > 3)
 		gm->currentFrame = 0;
-
+	
 	switch (key)
 	{
 	case KEY_RIGHT:
@@ -48,13 +47,15 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 		}
 	}	
 
+	
+
 
 	gm->framesCounter++;
 
 }
 
 void GameplayManager::UpdatePlayer(GameManager* gm)
-{
+{	
 	//PLAYER MOVEMENT
 	if (IsKeyDown(KEY_RIGHT))
 	{
@@ -65,6 +66,16 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 	{
 		gm->player.Move(KEY_LEFT);
 		UpdatePlayerAnim(gm, KEY_LEFT);
+	}
+	if (IsKeyDown(KEY_UP))
+	{
+		gm->player.Move(KEY_UP);
+		//UpdatePlayerAnim(gm, KEY_LEFT);
+	}	
+	if (IsKeyDown(KEY_DOWN))
+	{
+		gm->player.Move(KEY_DOWN);
+		//UpdatePlayerAnim(gm, KEY_LEFT);
 	}
 	if (IsKeyDown(KEY_SPACE))
 	{
@@ -90,7 +101,7 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 		}	
 	}
 
-	if (hitObstacle == false)
+	if (hitObstacle == false && player->GetOnLadder() == false)
 	{
 		player->SetPosition({ player->GetPosition().x , player->GetPosition().y + player->GetSpeed() * 0.25f });
 		player->SetSpeed(player->GetSpeed() + GFORCE);
@@ -102,7 +113,7 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 	}	
 
 	//Check if on ladder
-	player->SetOnLadder(false);
+	player->SetOnLadder(false, NULL);
 	for (int i = 0; i < gm->ladders.size(); i++)
 	{
 		Ladder* ld = &gm->ladders.at(i);
@@ -112,9 +123,8 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 			ld->hitBox.y <= player->GetPosition().y &&
 			ld->hitBox.y + ld->hitBox.height >= player->GetPosition().y)
 		{
-			player->SetOnLadder(true);
-		}
-		
+			player->SetOnLadder(true, ld);
+		}		
 	}
 
 

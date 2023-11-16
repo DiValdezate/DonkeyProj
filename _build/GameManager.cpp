@@ -81,7 +81,7 @@ void GameManager::LoadMap()
 	}
 
 	//Second floor, ladders
-	Ladder ld5(210, 600), ld6(460, 600);
+	Ladder ld5(210, 590), ld6(460, 590);
 	ladders.push_back(ld5);
 	ladders.push_back(ld6);
 
@@ -122,7 +122,7 @@ void GameManager::LoadMap()
 		}
 	}
 	//Third floor, ladders
-	Ladder ld7(87, 480), ld8(260, 480), ld9(440, 480), ld10(615, 480);
+	Ladder ld7(87, 470), ld8(260, 470), ld9(440, 470), ld10(615, 470);
 	ladders.push_back(ld7);
 	ladders.push_back(ld8);
 	ladders.push_back(ld9);
@@ -160,7 +160,7 @@ void GameManager::LoadMap()
 		}
 	}
 	//Fifth floor, ladders
-	Ladder ld11(67, 350), ld12(640, 350);
+	Ladder ld11(67, 340), ld12(640, 340);
 	ladders.push_back(ld11);
 	ladders.push_back(ld12);
 
@@ -172,7 +172,7 @@ void GameManager::LoadMap()
 		bricks.push_back(brick);
 	}
 	//Sixth floor, ladders
-	Ladder ld13(210, 190, LADDER_WIDTH, LADDER_HEIGHT * 2 - 60), ld14(260, 190, LADDER_WIDTH, LADDER_HEIGHT * 2 - 60), ld15(415, 230, LADDER_WIDTH, LADDER_HEIGHT/2);
+	Ladder ld13(210, 190, LADDER_WIDTH, LADDER_HEIGHT * 2 - 60), ld14(260, 190, LADDER_WIDTH, LADDER_HEIGHT * 2 - 60), ld15(415, 230, LADDER_WIDTH, LADDER_HEIGHT/2 + 40);
 	ladders.push_back(ld13);
 	ladders.push_back(ld14);
 	ladders.push_back(ld15);

@@ -1,9 +1,10 @@
 #pragma once
 #include <raylib.h>
+#include "Ladder.h"
 
 #define PLAYER_MAX_SPEED 4
 #define PLAYER_JUMP_FORCE 40
-#define GFORCE 4
+#define GFORCE 3
 
 enum Orientation { RIGHT, LEFT, UP }; //Where is the player facing at.
 
@@ -20,6 +21,8 @@ class Player
 	bool moving;
 	bool canJump;
 	bool onLadder;
+	Ladder* ladder;
+	
 
 public:
 	
@@ -46,7 +49,7 @@ public:
 	void CanJump(bool value);
 	bool GetCanJump();
 
-	void SetOnLadder(bool value);
+	void SetOnLadder(bool value, Ladder* ladder);
 	bool GetOnLadder();
 
 

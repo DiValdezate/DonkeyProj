@@ -46,6 +46,7 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 		{
 			Ladder ladder = gm->ladders.at(i);
 			DrawRectangle(ladder.hitBox.x, ladder.hitBox.y, ladder.hitBox.width, ladder.hitBox.height,WHITE);
+			DrawCircle(ladder.position.x, ladder.position.y, 2, RED);
 		}
 		
 
