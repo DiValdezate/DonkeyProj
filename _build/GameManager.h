@@ -35,12 +35,7 @@ public:
 	Image playerImg;
 	Texture2D playerTextRight[4];
 	Texture2D playerTextLeft[4];
-
-
-
-
-
-
+	Texture2D playerClimb[4];
 
 public:
 

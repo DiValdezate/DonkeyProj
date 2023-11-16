@@ -15,11 +15,6 @@ GameManager::GameManager():player()
 	mapImg = { 0 };
 	mapTexture = { 0 };
 	playerImg = { 0 };
-	playerTextRight[4] = {0};
-	playerTextLeft[4] = {0};
-
-
-
 }
 
 void GameManager::InitTextures()
@@ -36,6 +31,10 @@ void GameManager::InitTextures()
 	playerTextLeft[2] = LoadTexture("resources/Characters/Left2.png");
 	playerTextLeft[3] = LoadTexture("resources/Characters/Left1.png");
 
+	playerClimb[0] = LoadTexture("resources/Characters/Climb1.png");
+	playerClimb[1] = LoadTexture("resources/Characters/Climb2.png");
+	playerClimb[2] = LoadTexture("resources/Characters/Climb1.png");
+	playerClimb[3] = LoadTexture("resources/Characters/Climb2.png");
 }
 
 

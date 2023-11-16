@@ -35,6 +35,10 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 	case KEY_LEFT:
 		gm->player.SetTexture(&gm->playerTextLeft[gm->currentFrame]);
 		break;
+	case KEY_UP:	
+		if(gm->player.GetOnLadder())
+			gm->player.SetTexture(&gm->playerClimb[gm->currentFrame]);
+		break;
 	default:
 		switch (gm->player.GetOrientation())
 		{
@@ -70,12 +74,12 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 	if (IsKeyDown(KEY_UP))
 	{
 		gm->player.Move(KEY_UP);
-		//UpdatePlayerAnim(gm, KEY_LEFT);
+		UpdatePlayerAnim(gm, KEY_UP);
 	}	
 	if (IsKeyDown(KEY_DOWN))
 	{
 		gm->player.Move(KEY_DOWN);
-		//UpdatePlayerAnim(gm, KEY_LEFT);
+		UpdatePlayerAnim(gm, KEY_DOWN);
 	}
 	if (IsKeyDown(KEY_SPACE))
 	{

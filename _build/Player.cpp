@@ -133,7 +133,6 @@ void Player::Move(KeyboardKey key)
 			position.y += PLAYER_MAX_SPEED;
 		break;
 	}
-		
 	
 	
 }

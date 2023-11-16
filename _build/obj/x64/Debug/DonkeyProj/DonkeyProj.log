@@ -1,2 +1,12 @@
-﻿  Player.cpp
+﻿  GameManager.cpp
+  GameplayManager.cpp
+  Main.cpp
+  ScreenManager.cpp
+C:\Dev\PACS\DonkeyProj\_build\ScreenManager.cpp(48,86): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\ScreenManager.cpp(48,65): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\ScreenManager.cpp(48,48): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\ScreenManager.cpp(48,31): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\ScreenManager.cpp(49,49): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Dev\PACS\DonkeyProj\_build\ScreenManager.cpp(49,30): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
   DonkeyProj.vcxproj -> C:\Dev\PACS\DonkeyProj\_bin\Debug\DonkeyProj.exe
