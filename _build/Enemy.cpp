@@ -15,6 +15,8 @@ Enemy::Enemy(float x, float y)
 	texture = { 0 };
 }
 
+Enemy::~Enemy(){}
+
 void Enemy::SetPosition(float x, float y)
 {
 	this->position.x = x;

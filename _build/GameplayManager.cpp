@@ -11,7 +11,7 @@ void GameplayManager::GameplayLogic(GameManager* gm)
 	UpdatePlayerAnim(gm, KEY_ZERO);
 	UpdatePlayer(gm);
 	FireSpawner(gm);
-	MoveEnemies(gm);
+	//MoveEnemies(gm);
 
 
 }
@@ -138,10 +138,9 @@ void GameplayManager::FireSpawner(GameManager* gm)
 {
 	if (gm->enemies.empty())
 	{
-		Fire oilBarrel;
+		Enemy oilBarrel(335.0f, 400.0f);
 		oilBarrel.SetTexture(gm->oil);
 		gm->enemies.push_back(oilBarrel);
-		gm->enemyPtr.push_back(&oilBarrel);
 	}
 	else
 	{
@@ -150,22 +149,32 @@ void GameplayManager::FireSpawner(GameManager* gm)
 			Fire fire;
 			fire.SetTexture(gm->fireRight[0]);
 			gm->enemies.push_back(fire);
-			gm->enemyPtr.push_back(&fire);
 		}
 	}	
 }
 
-void GameplayManager::MoveEnemies(GameManager* gm)
+/*void GameplayManager::MoveEnemies(GameManager* gm)
 {
-	for (int i = 0; i < gm->enemyPtr.size(); i++)
+	for (size_t i = 0; i < gm->enemies.size(); i++)
 	{
-		Enemy* ptr = gm->enemyPtr[i];
-		if (Fire* fenemy = dynamic_cast<Fire*>(ptr))
-		{
-			fenemy->Move();
+		gm->enemyPtr.push_back(&gm->enemies[i]);
+		std::cout << gm->enemyPtr[i]->IsAlive();
+	}
+
+
+	for (size_t i = 0; i < gm->enemyPtr.size(); i++)
+	{
+		if (gm->enemyPtr[i] != nullptr)
+		{			
+			Enemy* ptr = gm->enemyPtr[i];
+
+			if (Fire* fenemy = dynamic_cast<Fire*>(ptr))
+			{
+				//ptr->Move();
+			}
 		}
 		
 	}
-}
+}*/
 
 

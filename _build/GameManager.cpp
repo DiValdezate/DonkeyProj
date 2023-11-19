@@ -11,6 +11,7 @@ GameManager::GameManager():player()
 	currentFrame = 0;
 	frameRec = { 0 };
 
+	enemyPtr = { 0 };
 
 	mapImg = { 0 };
 	mapTexture = { 0 };

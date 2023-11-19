@@ -11,6 +11,7 @@ class Enemy
 public: 
 	Enemy();
 	Enemy(float x, float y);
+	virtual ~Enemy();
 
 	void SetPosition(float x, float y);
 	Vector2 GetPosition();
