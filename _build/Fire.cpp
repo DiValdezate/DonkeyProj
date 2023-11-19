@@ -1,4 +1,5 @@
 #include "Fire.h"
+#include <iostream>
 
 Fire::Fire()
 {
@@ -7,6 +8,7 @@ Fire::Fire()
 }
 void Fire::Move()
 {
+	std::cout << "I'm fire, i'm moving";
 	float x = GetPosition().x;
 	float y = GetPosition().y;
 

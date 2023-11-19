@@ -39,3 +39,5 @@ bool Enemy::IsAlive()
 	return alive;
 }
 
+void Enemy::Move() {}
+

@@ -4,6 +4,7 @@
 #include "Enemy.h"
 #include "Brick.h"
 #include "Ladder.h"
+#include "Fire.h"
 #include <vector>
 
 enum CurrentScreen { LOGO, TITLE, GAMEPLAY, ENDING };
@@ -23,7 +24,7 @@ public:
 	//Characters
 	Player player;
 	std::vector<Enemy> enemies;
-
+	std::vector<Enemy*> enemyPtr;
 
 	//Map
 	std::vector<Brick> bricks;
@@ -38,6 +39,7 @@ public:
 	Texture2D playerClimb[4];
 	Texture2D fireRight[2];
 	Texture2D fireLeft[2];
+	Texture2D oil;
 
 
 public:

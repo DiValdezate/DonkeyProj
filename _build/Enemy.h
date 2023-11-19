@@ -19,5 +19,6 @@ public:
 	Texture2D GetTexture();
 
 	bool IsAlive();
+	virtual void Move();
 };
 

@@ -40,6 +40,8 @@ void GameManager::InitTextures()
 	fireRight[1] = LoadTexture("resources/Characters/FireRight2.png");
 	fireLeft[0] = LoadTexture("resources/Characters/FireLeft1.png");
 	fireLeft[1] = LoadTexture("resources/Characters/FireLeft2.png");
+
+	oil = LoadTexture("resources/Characters/Oil.png");
 }
 
 

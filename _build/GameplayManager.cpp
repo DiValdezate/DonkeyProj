@@ -10,8 +10,8 @@ void GameplayManager::GameplayLogic(GameManager* gm)
 {	
 	UpdatePlayerAnim(gm, KEY_ZERO);
 	UpdatePlayer(gm);
-
-
+	FireSpawner(gm);
+	MoveEnemies(gm);
 
 
 }
@@ -133,3 +133,39 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 
 
 }
+
+void GameplayManager::FireSpawner(GameManager* gm)
+{
+	if (gm->enemies.empty())
+	{
+		Fire oilBarrel;
+		oilBarrel.SetTexture(gm->oil);
+		gm->enemies.push_back(oilBarrel);
+		gm->enemyPtr.push_back(&oilBarrel);
+	}
+	else
+	{
+		if (gm->gameTime % 180 == 0) //spawns a fire every three seconds
+		{
+			Fire fire;
+			fire.SetTexture(gm->fireRight[0]);
+			gm->enemies.push_back(fire);
+			gm->enemyPtr.push_back(&fire);
+		}
+	}	
+}
+
+void GameplayManager::MoveEnemies(GameManager* gm)
+{
+	for (int i = 0; i < gm->enemyPtr.size(); i++)
+	{
+		Enemy* ptr = gm->enemyPtr[i];
+		if (Fire* fenemy = dynamic_cast<Fire*>(ptr))
+		{
+			fenemy->Move();
+		}
+		
+	}
+}
+
+

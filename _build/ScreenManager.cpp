@@ -41,12 +41,10 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 	case GAMEPLAY:
 		DrawTextureEx(gm->mapTexture, {0,0},0,1, WHITE);
 		DrawTextureEx(gm->player.GetTexture(), { gm->player.GetPosition().x, gm->player.GetPosition().y - gm->player.GetTexture().height }, 1, 1, WHITE);
-		
-		for (int i = 0; i < gm->ladders.size(); i++)
+	
+		for (int i = 0; i < gm->enemies.size(); i++)
 		{
-			Ladder ladder = gm->ladders.at(i);
-			//DrawRectangle(ladder.hitBox.x, ladder.hitBox.y, ladder.hitBox.width, ladder.hitBox.height,WHITE);
-			//DrawCircle(ladder.position.x, ladder.position.y, 2, RED);
+			DrawTextureEx(gm->enemies[i].GetTexture(), gm->enemies[i].GetPosition(), 1, 2, WHITE);
 		}
 		
 

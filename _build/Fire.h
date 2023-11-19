@@ -7,7 +7,7 @@ class Fire : public Enemy
 {
 public:
 	Fire();
-	void Move();
+	void Move() override;
 	
 
 	
