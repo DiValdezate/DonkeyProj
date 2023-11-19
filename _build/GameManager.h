@@ -22,7 +22,7 @@ public:
 
 	//Characters
 	Player player;
-	Enemy enemy;
+	std::vector<Enemy> enemies;
 
 
 	//Map
@@ -36,6 +36,9 @@ public:
 	Texture2D playerTextRight[4];
 	Texture2D playerTextLeft[4];
 	Texture2D playerClimb[4];
+	Texture2D fireRight[2];
+	Texture2D fireLeft[2];
+
 
 public:
 

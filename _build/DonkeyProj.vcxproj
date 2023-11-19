@@ -266,6 +266,7 @@
   <ItemGroup>
     <ClInclude Include="Brick.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Fire.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameplayManager.h" />
     <ClInclude Include="Ladder.h" />
@@ -276,6 +277,7 @@
   <ItemGroup>
     <ClCompile Include="Brick.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Fire.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameplayManager.cpp" />
     <ClCompile Include="Ladder.cpp" />

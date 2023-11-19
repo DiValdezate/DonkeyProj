@@ -35,6 +35,11 @@ void GameManager::InitTextures()
 	playerClimb[1] = LoadTexture("resources/Characters/Climb2.png");
 	playerClimb[2] = LoadTexture("resources/Characters/Climb1.png");
 	playerClimb[3] = LoadTexture("resources/Characters/Climb2.png");
+
+	fireRight[0] = LoadTexture("resources/Characters/FireRight1.png");
+	fireRight[1] = LoadTexture("resources/Characters/FireRight2.png");
+	fireLeft[0] = LoadTexture("resources/Characters/FireLeft1.png");
+	fireLeft[1] = LoadTexture("resources/Characters/FireLeft2.png");
 }
 
 
@@ -177,5 +182,7 @@ void GameManager::LoadMap()
 	ladders.push_back(ld15);
 
 }
+
+
 
 
