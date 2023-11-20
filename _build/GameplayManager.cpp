@@ -12,7 +12,7 @@ void GameplayManager::GameplayLogic(GameManager* gm)
 	UpdatePlayer(gm);
 	FireSpawner(gm);
 	MoveEnemies(gm);
-
+	UpdateEnemyAnim(gm);
 
 }
 
@@ -174,6 +174,38 @@ void GameplayManager::MoveEnemies(GameManager* gm)
 		}
 		
 	}
+}
+
+void GameplayManager::UpdateEnemyAnim(GameManager* gm)
+{
+	if (gm->framesCounter++ > 30)
+	{
+		gm->currentFrame++;
+		gm->framesCounter = 0;
+	}
+
+	if (gm->currentFrame > 3)
+		gm->currentFrame = 0;
+
+	for (int i = 0; i < gm->enemyPtr.size(); i++)
+	{
+		if (gm->enemyPtr[i] != nullptr)
+		{
+			Enemy* ptr = gm->enemyPtr[i];
+
+			if (Fire* fenemy = dynamic_cast<Fire*>(ptr))
+			{
+				if (ptr->GetOrientation())//True means right
+					ptr->SetTexture(gm->fireRight[gm->currentFrame]);
+				else
+				{
+					ptr->SetTexture(gm->fireLeft[gm->currentFrame]);
+				}
+			}
+		}
+
+	}
+
 }
 
 

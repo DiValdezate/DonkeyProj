@@ -19,5 +19,6 @@ public:
 	void FireSpawner(GameManager* gm);
 	
 	void MoveEnemies(GameManager* gm);
+	void UpdateEnemyAnim(GameManager* gm);
 };
 
