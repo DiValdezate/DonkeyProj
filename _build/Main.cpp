@@ -61,7 +61,7 @@ int main(void)
         if (gManager.screen == GAMEPLAY)
             gpManager.GameplayLogic(&gManager);
 
-
+      
     
 
 

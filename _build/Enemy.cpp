@@ -5,6 +5,16 @@ Enemy::Enemy()
 	position = { 0 };
 	alive = true;
 	texture = { 0 };
+	speed = 0;
+	enemyCount++;
+
+	if (enemyCount % 2 == 0)
+		lookingRight = false;
+	else
+	{
+		lookingRight = true;
+	}
+
 }
 
 Enemy::Enemy(float x, float y)
@@ -13,6 +23,16 @@ Enemy::Enemy(float x, float y)
 	this->position.y = y;
 	alive = true;
 	texture = { 0 };
+	speed = 0;
+	enemyCount++;
+
+	if (enemyCount % 2 == 0)
+		lookingRight = false;
+	else
+	{
+		lookingRight = true;
+	}
+	
 }
 
 Enemy::~Enemy(){}
@@ -36,6 +56,11 @@ Texture2D Enemy::GetTexture()
 	return texture;
 }
 
+int Enemy::GetOrientation()
+{
+	return lookingRight;
+}
+
 bool Enemy::IsAlive()
 {
 	return alive;
@@ -43,3 +68,12 @@ bool Enemy::IsAlive()
 
 void Enemy::Move() {}
 
+void Enemy::Turn()
+{
+	if (lookingRight)
+		lookingRight = false;
+	else
+		lookingRight = true;
+}
+
+int Enemy::enemyCount = 0;

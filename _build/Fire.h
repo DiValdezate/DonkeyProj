@@ -6,7 +6,9 @@
 class Fire : public Enemy
 {
 public:
+	Fire(float x, float y);
 	Fire();
+
 	void Move() override;
 	
 

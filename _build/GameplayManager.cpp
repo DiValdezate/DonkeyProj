@@ -11,7 +11,7 @@ void GameplayManager::GameplayLogic(GameManager* gm)
 	UpdatePlayerAnim(gm, KEY_ZERO);
 	UpdatePlayer(gm);
 	FireSpawner(gm);
-	//MoveEnemies(gm);
+	MoveEnemies(gm);
 
 
 }
@@ -138,43 +138,42 @@ void GameplayManager::FireSpawner(GameManager* gm)
 {
 	if (gm->enemies.empty())
 	{
-		Enemy oilBarrel(335.0f, 400.0f);
-		oilBarrel.SetTexture(gm->oil);
-		gm->enemies.push_back(oilBarrel);
+		Enemy* oilBarrel = new Enemy(335.0f, 400.0f);
+		oilBarrel->SetTexture(gm->oil);
+		gm->enemies.push_back(*oilBarrel);
+		gm->enemyPtr.push_back(oilBarrel);
 	}
 	else
 	{
-		if (gm->gameTime % 180 == 0) //spawns a fire every three seconds
+		if (gm->gameTime % 240 == 0) //spawns a fire every three seconds
 		{
-			Fire fire;
-			fire.SetTexture(gm->fireRight[0]);
-			gm->enemies.push_back(fire);
+			Enemy* fire = new Fire(335.0f, 370.0f);
+			if (fire->GetOrientation() == 1)
+				fire->SetTexture(gm->fireRight[0]);
+			else
+				fire->SetTexture(gm->fireLeft[0]);
+			gm->enemies.push_back(*fire);
+			gm->enemyPtr.push_back(fire);
 		}
 	}	
 }
 
-/*void GameplayManager::MoveEnemies(GameManager* gm)
+void GameplayManager::MoveEnemies(GameManager* gm)
 {
-	for (size_t i = 0; i < gm->enemies.size(); i++)
-	{
-		gm->enemyPtr.push_back(&gm->enemies[i]);
-		std::cout << gm->enemyPtr[i]->IsAlive();
-	}
 
-
-	for (size_t i = 0; i < gm->enemyPtr.size(); i++)
+	for (int i = 0; i < gm->enemyPtr.size(); i++)
 	{
 		if (gm->enemyPtr[i] != nullptr)
 		{			
-			Enemy* ptr = gm->enemyPtr[i];
+			Enemy* ptr = gm->enemyPtr[i];			
 
 			if (Fire* fenemy = dynamic_cast<Fire*>(ptr))
 			{
-				//ptr->Move();
+				ptr->Move();
 			}
 		}
 		
 	}
-}*/
+}
 
 
