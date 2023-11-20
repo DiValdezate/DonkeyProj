@@ -13,6 +13,7 @@ void GameplayManager::GameplayLogic(GameManager* gm)
 	FireSpawner(gm);
 	MoveEnemies(gm);
 	UpdateEnemyAnim(gm);
+	CheckCollisions(gm);
 
 }
 
@@ -102,6 +103,7 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 			hitObstacle = true;
 			player->SetSpeed(0.0f);
 			player->SetPosition({ player->GetPosition().x , brick->hitBox.y});
+			player->UpdateHitBox();
 		}	
 	}
 
@@ -110,6 +112,7 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 		player->SetPosition({ player->GetPosition().x , player->GetPosition().y + player->GetSpeed() * 0.25f });
 		player->SetSpeed(player->GetSpeed() + GFORCE);
 		player->CanJump(false);		
+		player->UpdateHitBox();
 	}
 	else
 	{
@@ -208,4 +211,21 @@ void GameplayManager::UpdateEnemyAnim(GameManager* gm)
 
 }
 
+void GameplayManager::CheckCollisions(GameManager* gm)
+{
+	for (int i = 0; i < gm->enemyPtr.size(); i++)
+	{
+		if (gm->enemyPtr[i] != nullptr)
+		{
+			Enemy* ptr = gm->enemyPtr[i];
+			if (Fire* fenemy = dynamic_cast<Fire*>(ptr))
+			{
+				if (CheckCollisionCircleRec({ ptr->GetPosition().x + 15, ptr->GetPosition().y + 15 }, ptr->GetRadius(), gm->player.GetHitbox()))
+				{
+					std::cout << "player hittt";
+				}
+			}
+		}
+	}
 
+}

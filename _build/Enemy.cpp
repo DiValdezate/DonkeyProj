@@ -7,6 +7,7 @@ Enemy::Enemy()
 	texture = { 0 };
 	speed = 0;
 	enemyCount++;
+	radius = 20.0f;
 
 	if (enemyCount % 2 == 0)
 		lookingRight = false;
@@ -25,6 +26,8 @@ Enemy::Enemy(float x, float y)
 	texture = { 0 };
 	speed = 0;
 	enemyCount++;
+	radius = 20.0f;
+
 
 	if (enemyCount % 2 == 0)
 		lookingRight = false;
@@ -61,6 +64,11 @@ int Enemy::GetOrientation()
 	return lookingRight;
 }
 
+float Enemy::GetRadius()
+{
+	return radius;
+}
+
 bool Enemy::IsAlive()
 {
 	return alive;
@@ -75,5 +83,6 @@ void Enemy::Turn()
 	else
 		lookingRight = true;
 }
+
 
 int Enemy::enemyCount = 0;

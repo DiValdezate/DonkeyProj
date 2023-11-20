@@ -11,8 +11,8 @@ Player::Player()
 	texture = { 0 };	
 	rotation = 0.0f;
 	moving = false;
-	hitBox.width = 10;
-	hitBox.height = 15;
+	hitBox.width = 20;
+	hitBox.height = 30;
 	canJump = true;
 	onLadder = false;
 	ladder = NULL;
@@ -62,6 +62,11 @@ void Player::SetHitBox(float x, float y, float width, float height)
 	this->hitBox.height = height;
 }
 
+Rectangle Player::GetHitbox()
+{
+	return hitBox;
+}
+
 void Player::SetSpeed(float speed)
 {
 	this->speed = speed;
@@ -101,8 +106,8 @@ Orientation Player::GetOrientation()
 
 void Player::UpdateHitBox()
 {
-	this->hitBox.x = position.x - hitBox.width/2;
-	this->hitBox.y = position.y - hitBox.height/2;
+	this->hitBox.x = position.x - hitBox.width/2 + 10;
+	this->hitBox.y = position.y - hitBox.height/2 - 10;
 }
 
 void Player::Move(KeyboardKey key)
@@ -110,11 +115,11 @@ void Player::Move(KeyboardKey key)
 	switch (key)
 	{
 	case KEY_RIGHT:		
-		position.x += PLAYER_MAX_SPEED;
+		position.x += PLAYER_MAX_SPEED;	
 		orientation = RIGHT;
 		break;
 	case KEY_LEFT:		
-		position.x -= PLAYER_MAX_SPEED;
+		position.x -= PLAYER_MAX_SPEED;		
 		orientation = LEFT;
 		break;
 	case KEY_SPACE:
@@ -135,4 +140,22 @@ void Player::Move(KeyboardKey key)
 	}
 	
 	
+}
+
+void Player::Hit()
+{
+	if (lives > 0)
+	{
+		lives--;
+		SetPosition({ 200 , 700 });
+	}
+	else
+	{
+		Kill();
+	}
+}
+
+void Player::Kill()
+{
+
 }

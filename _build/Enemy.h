@@ -1,6 +1,7 @@
 #pragma once
 #include <raylib.h>
 
+
 class Enemy
 {
 protected:
@@ -8,6 +9,7 @@ protected:
 	bool alive;
 	Texture2D texture;
 	float speed;
+	float radius;
 	static int enemyCount;
 	bool lookingRight;
 	 
@@ -25,9 +27,12 @@ public:
 
 	int GetOrientation();
 
+	float GetRadius();
+
 	void Turn();
 	bool IsAlive();
 	virtual void Move();
+	bool PlayerCollision();
 };
 
 

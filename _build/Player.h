@@ -41,6 +41,7 @@ public:
 	void SetRotation(float rotation);	
 
 	void SetHitBox(float x, float y, float width, float height);
+	Rectangle GetHitbox();
 	void UpdateHitBox();
 
 	void SetSpeed(float speed);

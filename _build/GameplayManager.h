@@ -20,5 +20,6 @@ public:
 	
 	void MoveEnemies(GameManager* gm);
 	void UpdateEnemyAnim(GameManager* gm);
+	void CheckCollisions(GameManager* gm);
 };
 
