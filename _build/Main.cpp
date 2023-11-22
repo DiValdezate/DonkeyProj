@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------------
 GameManager gManager;
 ScreenManager screenManager;
-GameplayManager gpManager;
+
 
 
 
@@ -32,7 +32,7 @@ int main(void)
     //Textures initialization
     //--------------------------------------------------------------------------------------
     gManager.InitTextures();
-
+    GameplayManager gpManager(&gManager);
 
     //Audio initialization
     //--------------------------------------------------------------------------------------

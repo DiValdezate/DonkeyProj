@@ -264,6 +264,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="Brick.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Fire.h" />
@@ -275,6 +276,7 @@
     <ClInclude Include="ScreenManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Brick.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Fire.cpp" />

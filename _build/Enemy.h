@@ -4,13 +4,16 @@
 
 class Enemy
 {
+public:
+
+	static int enemyCount;
+
 protected:
 	Vector2 position;
 	bool alive;
 	Texture2D texture;
 	float speed;
 	float radius;
-	static int enemyCount;
 	bool lookingRight;
 	 
 

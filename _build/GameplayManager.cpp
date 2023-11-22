@@ -1,8 +1,9 @@
 #include "GameplayManager.h"
 #include <iostream>
 
-GameplayManager::GameplayManager()
+GameplayManager::GameplayManager(GameManager* gm)
 {
+	BossSpawner(gm);
 
 }
 
@@ -52,7 +53,10 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 		}
 	}	
 
-	
+	if (gm->player.CanMove() == false)
+		gm->player.SetTexture(&gm->playerDeath[gm->currentFrame]);
+	if (gm->player.hitTime > 60 && gm->player.hitTime < 180)
+		gm->player.SetTexture(&gm->playerDeathIdle);
 
 
 	gm->framesCounter++;
@@ -134,6 +138,11 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 		}		
 	}
 
+	if (player->CanMove() == false)
+		player->HitTime();
+
+	std::cout << player->hitTime;
+	std::cout << "    ";
 
 }
 
@@ -159,6 +168,13 @@ void GameplayManager::FireSpawner(GameManager* gm)
 			gm->enemyPtr.push_back(fire);
 		}
 	}	
+}
+
+void GameplayManager::BossSpawner(GameManager* gm)
+{
+	Boss* donkey = new Boss(300, 210);
+	donkey->SetTexture(gm->boss[0]);	
+	gm->enemyPtr.push_back(donkey);
 }
 
 void GameplayManager::MoveEnemies(GameManager* gm)
@@ -221,8 +237,8 @@ void GameplayManager::CheckCollisions(GameManager* gm)
 			if (Fire* fenemy = dynamic_cast<Fire*>(ptr))
 			{
 				if (CheckCollisionCircleRec({ ptr->GetPosition().x + 15, ptr->GetPosition().y + 15 }, ptr->GetRadius(), gm->player.GetHitbox()))
-				{
-					std::cout << "player hittt";
+				{					
+					gm->player.Hit();					
 				}
 			}
 		}

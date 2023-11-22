@@ -9,13 +9,6 @@ Enemy::Enemy()
 	enemyCount++;
 	radius = 20.0f;
 
-	if (enemyCount % 2 == 0)
-		lookingRight = false;
-	else
-	{
-		lookingRight = true;
-	}
-
 }
 
 Enemy::Enemy(float x, float y)
@@ -28,14 +21,6 @@ Enemy::Enemy(float x, float y)
 	enemyCount++;
 	radius = 20.0f;
 
-
-	if (enemyCount % 2 == 0)
-		lookingRight = false;
-	else
-	{
-		lookingRight = true;
-	}
-	
 }
 
 Enemy::~Enemy(){}

@@ -10,19 +10,26 @@ enum Orientation { RIGHT, LEFT, UP }; //Where is the player facing at.
 
 class Player
 {
-	Orientation orientation;
 	int lives;
 	bool alive;
 	float speed;
+
+
+	Orientation orientation;
 	Vector2 position;
 	Texture2D texture;
 	Rectangle hitBox;
+
 	float rotation;
-	bool moving;
+	bool canMove;
 	bool canJump;
 	bool onLadder;
+
 	Ladder* ladder;
 	
+public:
+
+	int hitTime;
 
 public:
 	
@@ -63,7 +70,8 @@ public:
 	void Move(KeyboardKey key);
 	void TurnLeft();
 	void TurnRight();
-	void Moving(bool value);
-	bool IsMoving();
+	void SetMoving(bool value);
+	bool CanMove();
+	bool HitTime();
 };
 

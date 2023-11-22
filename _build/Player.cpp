@@ -10,12 +10,13 @@ Player::Player()
 	position = { 0 };
 	texture = { 0 };	
 	rotation = 0.0f;
-	moving = false;
+	canMove = true;;
 	hitBox.width = 20;
 	hitBox.height = 30;
 	canJump = true;
 	onLadder = false;
 	ladder = NULL;
+	hitTime = 0;
 	
 };
 
@@ -112,42 +113,61 @@ void Player::UpdateHitBox()
 
 void Player::Move(KeyboardKey key)
 {
-	switch (key)
+	if (canMove)
 	{
-	case KEY_RIGHT:		
-		position.x += PLAYER_MAX_SPEED;	
-		orientation = RIGHT;
-		break;
-	case KEY_LEFT:		
-		position.x -= PLAYER_MAX_SPEED;		
-		orientation = LEFT;
-		break;
-	case KEY_SPACE:
-		if (canJump)
+		switch (key)
 		{
-			speed = -PLAYER_JUMP_FORCE;
-			canJump = false;
+		case KEY_RIGHT:		
+			position.x += PLAYER_MAX_SPEED;	
+			orientation = RIGHT;
+			break;
+		case KEY_LEFT:		
+			position.x -= PLAYER_MAX_SPEED;		
+			orientation = LEFT;
+			break;
+		case KEY_SPACE:
+			if (canJump)
+			{
+				speed = -PLAYER_JUMP_FORCE;
+				canJump = false;
+			}
+			break;
+		case KEY_UP:
+			if (onLadder)
+				position.y -= PLAYER_MAX_SPEED;
+			break;
+		case KEY_DOWN:
+			if (onLadder && position.y <= ladder->hitBox.y + ladder->hitBox.height - 20)
+				position.y += PLAYER_MAX_SPEED;
+			break;
 		}
-		break;
-	case KEY_UP:
-		if (onLadder)
-			position.y -= PLAYER_MAX_SPEED;
-		break;
-	case KEY_DOWN:
-		if (onLadder && position.y <= ladder->hitBox.y + ladder->hitBox.height - 20)
-			position.y += PLAYER_MAX_SPEED;
-		break;
 	}
 	
 	
 }
 
+void Player::SetMoving(bool value)
+{
+	this->canMove = value;
+}
+
+bool Player::CanMove()
+{
+	return canMove;
+}
+
 void Player::Hit()
 {
+	canMove = false;
 	if (lives > 0)
-	{
-		lives--;
-		SetPosition({ 200 , 700 });
+	{			
+		//hitTime = 0;
+		if (HitTime())
+		{
+			lives--;		
+		}
+		//Play anim
+
 	}
 	else
 	{
@@ -157,5 +177,21 @@ void Player::Hit()
 
 void Player::Kill()
 {
+	//canMove = false;
 
+
+}
+
+bool Player::HitTime()
+{
+	hitTime++;
+	if (hitTime > 180)
+	{
+		canMove = true;
+		hitTime = 0;
+		SetPosition({ 200 , 700 });
+		return false;
+	}
+
+	return true;
 }

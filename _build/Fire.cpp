@@ -5,6 +5,14 @@ Fire::Fire() : Enemy()
 {
 	speed = FIRE_SPD;
 	radius = 15.0f;
+	fireCount++;
+
+	if (fireCount % 2 == 0)
+		lookingRight = false;
+	else
+	{
+		lookingRight = true;
+	}
 	
 }
 
@@ -13,6 +21,14 @@ Fire::Fire(float x, float y) : Enemy(x, y)
 {
 	speed = FIRE_SPD;
 	radius = 15.0f;
+	fireCount++;
+
+	if (fireCount % 2 == 0)
+		lookingRight = false;
+	else
+	{
+		lookingRight = true;
+	}
 }
 
 
@@ -38,3 +54,5 @@ void Fire::Move()
 
 
 }
+
+int Fire::fireCount = 0;

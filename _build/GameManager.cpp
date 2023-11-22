@@ -37,6 +37,18 @@ void GameManager::InitTextures()
 	playerClimb[2] = LoadTexture("resources/Characters/Climb1.png");
 	playerClimb[3] = LoadTexture("resources/Characters/Climb2.png");
 
+	playerDeath[0] = LoadTexture("resources/Characters/Death1.png");
+	playerDeath[1] = LoadTexture("resources/Characters/Death2.png");
+	playerDeath[2] = LoadTexture("resources/Characters/Death3.png");
+	playerDeath[3] = LoadTexture("resources/Characters/Death4.png");
+
+	playerDeathIdle = LoadTexture("resources/Characters/MArio_Death_Idle.png");
+
+	boss[0] = LoadTexture("resources/Characters/Dk1.png");
+	boss[1] = LoadTexture("resources/Characters/Dk2.png");
+	boss[2] = LoadTexture("resources/Characters/Dk3.png");
+	boss[3] = LoadTexture("resources/Characters/Dk2.png");
+
 	fireRight[0] = LoadTexture("resources/Characters/FireRight1.png");
 	fireRight[1] = LoadTexture("resources/Characters/FireRight2.png");
 	fireRight[2] = LoadTexture("resources/Characters/FireRight1.png");
@@ -45,6 +57,7 @@ void GameManager::InitTextures()
 	fireLeft[1] = LoadTexture("resources/Characters/FireLeft2.png");
 	fireLeft[2] = LoadTexture("resources/Characters/FireLeft1.png");
 	fireLeft[3] = LoadTexture("resources/Characters/FireLeft2.png");
+
 
 	oil = LoadTexture("resources/Characters/Oil.png");
 }

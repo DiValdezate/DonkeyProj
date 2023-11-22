@@ -5,6 +5,7 @@
 #include "Brick.h"
 #include "Ladder.h"
 #include "Fire.h"
+#include "Boss.h"
 #include <vector>
 
 enum CurrentScreen { LOGO, TITLE, GAMEPLAY, ENDING };
@@ -39,6 +40,10 @@ public:
 	Texture2D playerClimb[4];
 	Texture2D fireRight[4];
 	Texture2D fireLeft[4];
+	Texture2D boss[4];
+	Texture2D playerDeath[4];
+	Texture2D playerDeathIdle;
+
 	Texture2D oil;
 
 

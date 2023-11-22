@@ -11,12 +11,14 @@ public:
 
 public:
 
-	GameplayManager();
+	GameplayManager(GameManager* gm);
 
 	void GameplayLogic(GameManager* gm);
 	void UpdatePlayerAnim(GameManager* gm, KeyboardKey key);
 	void UpdatePlayer(GameManager* gm);
+	void EnemySpawner(GameManager* gm);
 	void FireSpawner(GameManager* gm);
+	void BossSpawner(GameManager* gm);
 	
 	void MoveEnemies(GameManager* gm);
 	void UpdateEnemyAnim(GameManager* gm);

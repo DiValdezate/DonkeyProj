@@ -6,6 +6,9 @@
 class Fire : public Enemy
 {
 public:
+	static int fireCount;
+
+public:
 	Fire(float x, float y);
 	Fire();
 
