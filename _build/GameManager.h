@@ -7,6 +7,7 @@
 #include "Fire.h"
 #include "Ghost.h"
 #include "Boss.h"
+#include "Barrel.h"
 #include <vector>
 
 enum CurrentScreen { LOGO, TITLE, GAMEPLAY, ENDING };
@@ -44,6 +45,7 @@ public:
 	Texture2D ghostRight[4];
 	Texture2D ghostLeft[4];
 	Texture2D boss[4];
+	Texture2D barrel[4];
 	Texture2D playerDeath[4];
 	Texture2D playerDeathIdle;
 

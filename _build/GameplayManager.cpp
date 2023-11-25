@@ -10,7 +10,7 @@ void GameplayManager::GameplayLogic(GameManager* gm)
 {	
 	UpdatePlayerAnim(gm, KEY_ZERO);
 	UpdatePlayer(gm);
-	FireSpawner(gm);
+	RandomEnemySpawner(gm);
 	MoveEnemies(gm);
 	UpdateEnemyAnim(gm);
 	CheckCollisions(gm);
@@ -134,6 +134,7 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 			ld->hitBox.y + ld->hitBox.height >= player->GetPosition().y)
 		{
 			player->SetOnLadder(true, ld);
+			player->UpdateHitBox();
 		}		
 	}
 
@@ -141,17 +142,38 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 		player->HitTime();
 }
 
-void GameplayManager::FireSpawner(GameManager* gm)
+void GameplayManager::RandomEnemySpawner(GameManager* gm)
 {
-		if (gm->gameTime % 240 == 0) //spawns a fire every three seconds
+		if (gm->gameTime % 240 == 0) //spawns a random fire every three seconds and stops when there are 5 of them
 		{
-			Enemy* fire = new Fire(335.0f, 370.0f);
-			if (fire->GetOrientation() == 1)
-				fire->SetTexture(gm->fireRight[0]);
+			Fire* fire = new Fire(335.0f, 370.0f);
+			if (fire->fireCount <= 5)
+			{
+				if (fire->GetOrientation() == 1)
+					fire->SetTexture(gm->fireRight[0]);
+				else
+					fire->SetTexture(gm->fireLeft[0]);
+				gm->enemies.push_back(*fire);
+				gm->enemyPtr.push_back(fire);
+			}
+		}
+
+		if (gm->gameTime % 120 == 0) //spawns a random barrel every two seconds
+		{
+			Enemy* barrel = new Barrel();
+			if (barrel->GetOrientation() == 1)
+			{
+				barrel->SetTexture(gm->barrel[0]);
+				barrel->SetPosition(10, 625);
+			}
 			else
-				fire->SetTexture(gm->fireLeft[0]);
-			gm->enemies.push_back(*fire);
-			gm->enemyPtr.push_back(fire);
+			{
+				barrel->SetTexture(gm->barrel[0]);
+				barrel->SetPosition((float)GetScreenWidth() - 10, 625);
+			}
+
+			gm->enemies.push_back(*barrel);
+			gm->enemyPtr.push_back(barrel);
 		}
 	
 }
@@ -213,6 +235,15 @@ void GameplayManager::UpdateEnemyAnim(GameManager* gm)
 				else
 				{
 					ptr->SetTexture(gm->boss[gm->currentFrame]);
+				}
+			}
+			if (Barrel* barrelEnemy = dynamic_cast<Barrel*>(ptr))
+			{
+				if (ptr->GetOrientation())//True means right
+					ptr->SetTexture(gm->barrel[gm->currentFrame]);
+				else
+				{
+					ptr->SetTexture(gm->barrel[gm->currentFrame]);
 				}
 			}
 		}

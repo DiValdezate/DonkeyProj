@@ -47,8 +47,13 @@ void GameManager::InitTextures()
 
 	boss[0] = LoadTexture("resources/Characters/Dk1.png");
 	boss[1] = LoadTexture("resources/Characters/Dk2.png");
-	boss[2] = LoadTexture("resources/Characters/Dk3.png");
-	boss[3] = LoadTexture("resources/Characters/Dk2.png");
+	boss[2] = LoadTexture("resources/Characters/Dk1.png");
+	boss[3] = LoadTexture("resources/Characters/Dk3.png");
+
+	barrel[0] = LoadTexture("resources/Characters/Barrel1.png");
+	barrel[1] = LoadTexture("resources/Characters/Barrel2.png");
+	barrel[2] = LoadTexture("resources/Characters/Barrel2.png");
+	barrel[3] = LoadTexture("resources/Characters/Barrel1.png");
 
 	ghostRight[0] = LoadTexture("resources/Characters/GhostRight1.png");
 	ghostRight[1] = LoadTexture("resources/Characters/GhostRight2.png");

@@ -2,7 +2,7 @@
 #include "Enemy.h"
 
 
-#define BARREL_SPEED 5
+#define BARREL_SPEED 10
 
 class Barrel : public Enemy
 {
