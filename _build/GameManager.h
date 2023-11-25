@@ -53,6 +53,7 @@ public:
 
 	void InitTextures();
 	void LoadMap();
+	void LoadEnemies();
 
 };
 

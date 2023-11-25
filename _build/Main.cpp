@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------------
 GameManager gManager;
 ScreenManager screenManager;
-
+GameplayManager gpManager;
 
 
 
@@ -32,7 +32,8 @@ int main(void)
     //Textures initialization
     //--------------------------------------------------------------------------------------
     gManager.InitTextures();
-    GameplayManager gpManager(&gManager);
+    
+    
 
     //Audio initialization
     //--------------------------------------------------------------------------------------
@@ -46,6 +47,7 @@ int main(void)
     gManager.player.SetTexture(&gManager.playerTextRight[0]);
     gManager.player.SetPosition({ 200 , 700 });    
     gManager.LoadMap();
+    gManager.LoadEnemies();
     
 
     SetTargetFPS(60);

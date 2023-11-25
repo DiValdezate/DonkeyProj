@@ -1,9 +1,8 @@
 #include "GameplayManager.h"
 #include <iostream>
 
-GameplayManager::GameplayManager(GameManager* gm)
+GameplayManager::GameplayManager()
 {
-	BossSpawner(gm);
 
 }
 
@@ -148,15 +147,6 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 
 void GameplayManager::FireSpawner(GameManager* gm)
 {
-	if (gm->enemies.empty())
-	{
-		Enemy* oilBarrel = new Enemy(335.0f, 400.0f);
-		oilBarrel->SetTexture(gm->oil);
-		gm->enemies.push_back(*oilBarrel);
-		gm->enemyPtr.push_back(oilBarrel);
-	}
-	else
-	{
 		if (gm->gameTime % 240 == 0) //spawns a fire every three seconds
 		{
 			Enemy* fire = new Fire(335.0f, 370.0f);
@@ -167,14 +157,7 @@ void GameplayManager::FireSpawner(GameManager* gm)
 			gm->enemies.push_back(*fire);
 			gm->enemyPtr.push_back(fire);
 		}
-	}	
-}
-
-void GameplayManager::BossSpawner(GameManager* gm)
-{
-	Boss* donkey = new Boss(300, 210);
-	donkey->SetTexture(gm->boss[0]);	
-	gm->enemyPtr.push_back(donkey);
+	
 }
 
 void GameplayManager::MoveEnemies(GameManager* gm)

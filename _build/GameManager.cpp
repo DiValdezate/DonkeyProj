@@ -203,6 +203,23 @@ void GameManager::LoadMap()
 
 }
 
+void GameManager::LoadEnemies()
+{
+	Boss* donkey = new Boss(300, 210);
+	donkey->SetTexture(boss[0]);
+	enemyPtr.push_back(donkey);
 
+	Enemy* oilBarrel = new Enemy(335.0f, 400.0f);
+	oilBarrel->SetTexture(oil);
+	enemies.push_back(*oilBarrel);
+	enemyPtr.push_back(oilBarrel);
+
+
+	Enemy* enemy1 = new Enemy(300, 495);
+
+
+	enemy1->SetTexture(fireLeft[0]);
+	enemyPtr.push_back(enemy1);
+}
 
 
