@@ -1,4 +1,5 @@
 #include "GameManager.h"
+#include <iostream>
 
 GameManager::GameManager():player()
 {
@@ -48,6 +49,15 @@ void GameManager::InitTextures()
 	boss[1] = LoadTexture("resources/Characters/Dk2.png");
 	boss[2] = LoadTexture("resources/Characters/Dk3.png");
 	boss[3] = LoadTexture("resources/Characters/Dk2.png");
+
+	ghostRight[0] = LoadTexture("resources/Characters/GhostRight1.png");
+	ghostRight[1] = LoadTexture("resources/Characters/GhostRight2.png");
+	ghostRight[2] = LoadTexture("resources/Characters/GhostRight1.png");
+	ghostRight[3] = LoadTexture("resources/Characters/GhostRight2.png");
+	ghostLeft[0] = LoadTexture("resources/Characters/GhostLeft1.png");
+	ghostLeft[1] = LoadTexture("resources/Characters/GhostLeft2.png");
+	ghostLeft[2] = LoadTexture("resources/Characters/GhostLeft1.png");
+	ghostLeft[3] = LoadTexture("resources/Characters/GhostLeft2.png");
 
 	fireRight[0] = LoadTexture("resources/Characters/FireRight1.png");
 	fireRight[1] = LoadTexture("resources/Characters/FireRight2.png");
@@ -203,7 +213,7 @@ void GameManager::LoadMap()
 
 }
 
-void GameManager::LoadEnemies()
+void GameManager::LoadEnemies() //Load all non random-spawning enemies
 {
 	Boss* donkey = new Boss(300, 210);
 	donkey->SetTexture(boss[0]);
@@ -215,11 +225,24 @@ void GameManager::LoadEnemies()
 	enemyPtr.push_back(oilBarrel);
 
 
-	Enemy* enemy1 = new Enemy(300, 495);
+	Ghost* ghost1 = new Ghost(575, 495);
+	Ghost* ghost2 = new Ghost(450, 495);
+	Ghost* ghost3 = new Ghost(300, 495);
+	Ghost* ghost4 = new Ghost(230, 495);
 
 
-	enemy1->SetTexture(fireLeft[0]);
-	enemyPtr.push_back(enemy1);
+	ghost1->SetTexture(ghostRight[0]);
+	enemyPtr.push_back(ghost1);
+
+	ghost2->SetTexture(ghostLeft[0]);
+	enemyPtr.push_back(ghost2);
+
+	ghost3->SetTexture(ghostRight[0]);
+	enemyPtr.push_back(ghost3);
+
+	ghost4->SetTexture(ghostLeft[0]);
+	enemyPtr.push_back(ghost4);
+	
 }
 
 

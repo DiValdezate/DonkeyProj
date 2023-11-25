@@ -49,10 +49,6 @@ void Fire::Move()
 
 	if (position.x == 0)
 		lookingRight = true;
-
-
-
-
 }
 
 int Fire::fireCount = 0;

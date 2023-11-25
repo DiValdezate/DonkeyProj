@@ -5,6 +5,7 @@
 #include "Brick.h"
 #include "Ladder.h"
 #include "Fire.h"
+#include "Ghost.h"
 #include "Boss.h"
 #include <vector>
 
@@ -40,6 +41,8 @@ public:
 	Texture2D playerClimb[4];
 	Texture2D fireRight[4];
 	Texture2D fireLeft[4];
+	Texture2D ghostRight[4];
+	Texture2D ghostLeft[4];
 	Texture2D boss[4];
 	Texture2D playerDeath[4];
 	Texture2D playerDeathIdle;

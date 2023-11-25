@@ -139,10 +139,6 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 
 	if (player->CanMove() == false)
 		player->HitTime();
-
-	std::cout << player->hitTime;
-	std::cout << "    ";
-
 }
 
 void GameplayManager::FireSpawner(GameManager* gm)
@@ -169,10 +165,7 @@ void GameplayManager::MoveEnemies(GameManager* gm)
 		{			
 			Enemy* ptr = gm->enemyPtr[i];			
 
-			if (Fire* fenemy = dynamic_cast<Fire*>(ptr))
-			{
-				ptr->Move();
-			}
+			ptr->Move();
 		}
 		
 	}
@@ -204,6 +197,24 @@ void GameplayManager::UpdateEnemyAnim(GameManager* gm)
 					ptr->SetTexture(gm->fireLeft[gm->currentFrame]);
 				}
 			}
+			if (Ghost* genemy = dynamic_cast<Ghost*>(ptr))
+			{
+				if (ptr->GetOrientation())//True means right
+					ptr->SetTexture(gm->ghostRight[gm->currentFrame]);
+				else
+				{
+					ptr->SetTexture(gm->ghostLeft[gm->currentFrame]);
+				}
+			}
+			if (Boss* benemy = dynamic_cast<Boss*>(ptr))
+			{
+				if (ptr->GetOrientation())//True means right
+					ptr->SetTexture(gm->boss[gm->currentFrame]);
+				else
+				{
+					ptr->SetTexture(gm->boss[gm->currentFrame]);
+				}
+			}
 		}
 
 	}
@@ -217,13 +228,12 @@ void GameplayManager::CheckCollisions(GameManager* gm)
 		if (gm->enemyPtr[i] != nullptr)
 		{
 			Enemy* ptr = gm->enemyPtr[i];
-			if (Fire* fenemy = dynamic_cast<Fire*>(ptr))
-			{
-				if (CheckCollisionCircleRec({ ptr->GetPosition().x + 15, ptr->GetPosition().y + 15 }, ptr->GetRadius(), gm->player.GetHitbox()))
-				{					
-					gm->player.Hit();					
-				}
+
+			if (CheckCollisionCircleRec({ ptr->GetPosition().x + 15, ptr->GetPosition().y + 15 }, ptr->GetRadius(), gm->player.GetHitbox()))
+			{					
+				gm->player.Hit();					
 			}
+
 		}
 	}
 
