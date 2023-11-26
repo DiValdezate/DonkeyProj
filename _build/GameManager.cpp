@@ -10,6 +10,8 @@ GameManager::GameManager():player()
 	framesCounter = 0;
 	framesSpeed = 0;
 	currentFrame = 0;
+	score = 0;
+	lives = player.GetLives();
 	frameRec = { 0 };
 
 	enemyPtr = { 0 };
@@ -75,6 +77,10 @@ void GameManager::InitTextures()
 
 
 	oil = LoadTexture("resources/Characters/Oil.png");
+
+	bag = LoadTexture("resources/Characters/bag.png");
+	umbrella = LoadTexture("resources/Characters/umbrella.png");
+	peach = LoadTexture("resources/Characters/Peach.png");
 }
 
 
@@ -250,4 +256,24 @@ void GameManager::LoadEnemies() //Load all non random-spawning enemies
 	
 }
 
+void GameManager::LoadPickUps()
+{
+	PickUp item(BAG);
+	item.SetUpItem();
+	item.position = {100,255};
+	item.texture = bag;
 
+	PickUp item2(UMBRELLA);
+	item2.SetUpItem();
+	item2.position = {300,625};
+	item2.texture = umbrella;
+
+	PickUp win(PEACH);
+	win.SetUpItem();
+	win.position = {300,115};
+	win.texture = peach;
+
+	pickups.push_back(item);
+	pickups.push_back(item2);
+	pickups.push_back(win);
+}

@@ -8,6 +8,7 @@
 #include "Ghost.h"
 #include "Boss.h"
 #include "Barrel.h"
+#include "PickUp.h"
 #include <vector>
 
 enum CurrentScreen { LOGO, TITLE, GAMEPLAY, ENDING };
@@ -22,6 +23,8 @@ public:
 	int framesCounter;
 	int framesSpeed;
 	int currentFrame;
+	int score;
+	int lives;
 	Rectangle frameRec;
 
 	//Characters
@@ -32,6 +35,7 @@ public:
 	//Map
 	std::vector<Brick> bricks;
 	std::vector<Ladder> ladders;
+	std::vector<PickUp> pickups;
 
 	//Textures
 	Image mapImg;
@@ -46,6 +50,9 @@ public:
 	Texture2D ghostLeft[4];
 	Texture2D boss[4];
 	Texture2D barrel[4];
+	Texture2D bag;
+	Texture2D umbrella;
+	Texture2D peach;
 	Texture2D playerDeath[4];
 	Texture2D playerDeathIdle;
 
@@ -59,6 +66,7 @@ public:
 	void InitTextures();
 	void LoadMap();
 	void LoadEnemies();
+	void LoadPickUps();
 
 };
 

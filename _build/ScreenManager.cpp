@@ -53,6 +53,10 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 			}
 		}
 		
+		for (int i = 0; i < gm->pickups.size(); i++)
+		{
+			DrawTextureEx(gm->pickups[i].texture, gm->pickups[i].position, 1, 1.5f, WHITE);
+		}
 		
 
 

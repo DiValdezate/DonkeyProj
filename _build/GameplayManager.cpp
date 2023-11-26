@@ -128,7 +128,7 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 	{
 		Ladder* ld = &gm->ladders.at(i);
 
-		if (ld->hitBox.x <= player->GetPosition().x &&
+		if (ld->hitBox.x <= player->GetPosition().x + 15 &&
 			ld->hitBox.x + ld->hitBox.width >= player->GetPosition().x &&
 			ld->hitBox.y <= player->GetPosition().y &&
 			ld->hitBox.y + ld->hitBox.height >= player->GetPosition().y)
@@ -267,5 +267,27 @@ void GameplayManager::CheckCollisions(GameManager* gm)
 
 		}
 	}
+
+	for (int i = 0; i < gm->pickups.size(); i++)
+	{
+		PickUp pckp = gm->pickups[i];
+
+		if (CheckCollisionCircleRec({ pckp.position.x + 15, pckp.position.y + 15 }, pckp.radius, gm->player.GetHitbox()))
+		{
+			gm->score += pckp.points;
+
+			if (pckp.type == PEACH)
+			{
+
+			}
+			else
+			{
+				gm->pickups.erase(gm->pickups.begin()+i);
+			}
+		}
+
+	}
+
+
 
 }

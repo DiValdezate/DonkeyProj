@@ -48,6 +48,7 @@ int main(void)
     gManager.player.SetPosition({ 200 , 700 });    
     gManager.LoadMap();
     gManager.LoadEnemies();
+    gManager.LoadPickUps();
     
 
     SetTargetFPS(60);

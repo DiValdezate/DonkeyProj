@@ -274,6 +274,7 @@
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="Ladder.h" />
     <ClInclude Include="MapElements.h" />
+    <ClInclude Include="PickUp.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ScreenManager.h" />
   </ItemGroup>
@@ -288,6 +289,7 @@
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="Ladder.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PickUp.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScreenManager.cpp" />
   </ItemGroup>
