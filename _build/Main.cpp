@@ -80,7 +80,7 @@ int main(void)
 
      
 
-        ClearBackground(LIGHTGRAY);
+        
 
 
 
