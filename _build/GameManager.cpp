@@ -5,6 +5,7 @@ GameManager::GameManager():player()
 {
 
 	screen = LOGO;
+	result = NONE;
 
 	gameTime = 0;
 	framesCounter = 0;
@@ -25,6 +26,9 @@ void GameManager::InitTextures()
 {
 	mapImg = LoadImage("resources/Maps/Custom_L2.png");
 	mapTexture = LoadTextureFromImage(mapImg);
+
+	winScreen = LoadTexture("resources/Maps/WIN.png");
+	loseScreen = LoadTexture("resources/Maps/LOSE.png");
 	
 	playerTextRight[0] = LoadTexture("resources/Characters/Right.png");
 	playerTextRight[1] = LoadTexture("resources/Characters/Right1.png");

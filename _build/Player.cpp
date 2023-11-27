@@ -160,13 +160,7 @@ void Player::Hit()
 {
 	canMove = false;
 	if (lives > 0)
-	{			
-		//hitTime = 0;
-		if (HitTime())
-		{
-			lives--;		
-		}
-		//Play anim
+	{	
 
 	}
 	else
@@ -177,7 +171,7 @@ void Player::Hit()
 
 void Player::Kill()
 {
-	//canMove = false;
+	
 
 
 }
@@ -190,6 +184,7 @@ bool Player::HitTime()
 		canMove = true;
 		hitTime = 0;
 		SetPosition({ 200 , 700 });
+		lives--;
 		return false;
 	}
 

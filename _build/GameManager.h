@@ -12,12 +12,14 @@
 #include <vector>
 
 enum CurrentScreen { LOGO, TITLE, GAMEPLAY, ENDING };
+enum GameResult { NONE, WIN, LOSE };
 
 class GameManager
 {
 public:
 
 	CurrentScreen screen;
+	GameResult result;
 
 	int gameTime;
 	int framesCounter;
@@ -40,6 +42,9 @@ public:
 	//Textures
 	Image mapImg;
 	Texture mapTexture;
+	Texture2D winScreen;
+	Texture2D loseScreen;
+
 	Image playerImg;
 	Texture2D playerTextRight[4];
 	Texture2D playerTextLeft[4];
@@ -55,7 +60,6 @@ public:
 	Texture2D peach;
 	Texture2D playerDeath[4];
 	Texture2D playerDeathIdle;
-
 	Texture2D oil;
 
 

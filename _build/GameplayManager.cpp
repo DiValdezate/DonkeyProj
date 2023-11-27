@@ -40,6 +40,10 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 		if(gm->player.GetOnLadder())
 			gm->player.SetTexture(&gm->playerClimb[gm->currentFrame]);
 		break;
+	case KEY_DOWN:
+		if (gm->player.GetOnLadder())
+			gm->player.SetTexture(&gm->playerClimb[gm->currentFrame]);
+		break;
 	default:
 		switch (gm->player.GetOrientation())
 		{
@@ -64,6 +68,13 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 
 void GameplayManager::UpdatePlayer(GameManager* gm)
 {	
+	gm->lives = gm->player.GetLives();
+	if (gm->lives <= 0)
+	{
+		gm->screen = ENDING;
+		gm->result = LOSE;
+	}
+
 	//PLAYER MOVEMENT
 	if (IsKeyDown(KEY_RIGHT))
 	{
@@ -116,6 +127,11 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 		player->SetSpeed(player->GetSpeed() + GFORCE);
 		player->CanJump(false);		
 		player->UpdateHitBox();
+
+		if(player->GetOrientation() == LEFT)
+			player->SetTexture(&gm->playerTextLeft[1]);
+		if (player->GetOrientation() == RIGHT)
+			player->SetTexture(&gm->playerTextRight[1]);
 	}
 	else
 	{
@@ -278,16 +294,14 @@ void GameplayManager::CheckCollisions(GameManager* gm)
 
 			if (pckp.type == PEACH)
 			{
-
+				gm->screen = ENDING;
+				gm->result = WIN;
 			}
 			else
-			{
+			{				
 				gm->pickups.erase(gm->pickups.begin()+i);
 			}
 		}
 
 	}
-
-
-
 }

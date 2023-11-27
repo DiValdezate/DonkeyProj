@@ -15,6 +15,7 @@ public:
 	void ScreenTransition();
 	void ScreenLogic(GameManager* gm);
 	void ScreenDrawer(GameManager* gm);
+	void DrawHUD(GameManager* gm);
 
 };
 
