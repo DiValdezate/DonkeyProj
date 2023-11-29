@@ -190,3 +190,11 @@ bool Player::HitTime()
 
 	return true;
 }
+
+void Player::ResetPlayer()
+{
+	lives = 3;
+	orientation = RIGHT;
+	alive = true;
+	position = { 200,700 };
+}

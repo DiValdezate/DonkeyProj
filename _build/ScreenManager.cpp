@@ -13,6 +13,9 @@ void ScreenManager::ScreenLogic(GameManager* gm)
 	switch (gm->screen)
 	{
 	case LOGO:
+		gm->InitData();
+		if (gm->gameTime > 12)
+			gm->screen = TITLE;
 
 		break;
 
@@ -39,10 +42,14 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 	switch (gm->screen)
 	{
 	case LOGO:
-
+		DrawTextureEx(gm->logoScreen, {-190,70}, 0, 0.7f, WHITE);
 		break;
 
 	case TITLE:
+		ClearBackground(BLACK);
+		DrawTextureEx(gm->titleScreen, { 130,70 }, 0, 1, WHITE);
+		DrawText("Press [START] to start playing", 180, 400, 20, WHITE);
+
 		break;
 
 	case GAMEPLAY:

@@ -17,6 +17,7 @@ void GameplayManager::GameplayLogic(GameManager* gm)
 
 }
 
+
 void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 {	
 	if (gm->framesCounter++ > 30)

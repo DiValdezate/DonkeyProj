@@ -42,7 +42,7 @@ int main(void)
     //Variables initialization
     //--------------------------------------------------------------------------------------
     gManager.gameTime = 0;
-    gManager.screen = GAMEPLAY;//Change it later
+    gManager.screen = LOGO;//Change it later
 
     gManager.player.SetTexture(&gManager.playerTextRight[0]);
     gManager.player.SetPosition({ 200 , 700 });    
@@ -60,6 +60,8 @@ int main(void)
         // UPDATE
         //----------------------------------------------------------------------------------
         screenManager.ScreenLogic(&gManager);
+        std::cout << "   ";
+        std::cout << gManager.gameTime;
 
         if (gManager.screen == GAMEPLAY)
             gpManager.GameplayLogic(&gManager);

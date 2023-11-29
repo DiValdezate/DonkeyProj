@@ -20,7 +20,8 @@ public:
 
 	CurrentScreen screen;
 	GameResult result;
-
+	
+	bool isDataCleared;
 	int gameTime;
 	int framesCounter;
 	int framesSpeed;
@@ -42,6 +43,8 @@ public:
 	//Textures
 	Image mapImg;
 	Texture mapTexture;
+	Texture2D titleScreen;
+	Texture2D logoScreen;
 	Texture2D winScreen;
 	Texture2D loseScreen;
 
@@ -67,6 +70,7 @@ public:
 
 	GameManager();
 
+	void InitData();
 	void InitTextures();
 	void LoadMap();
 	void LoadEnemies();

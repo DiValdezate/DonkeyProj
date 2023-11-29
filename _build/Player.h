@@ -73,5 +73,6 @@ public:
 	void SetMoving(bool value);
 	bool CanMove();
 	bool HitTime();
+	void ResetPlayer();
 };
 

@@ -7,6 +7,7 @@ GameManager::GameManager():player()
 	screen = LOGO;
 	result = NONE;
 
+	isDataCleared = false;
 	gameTime = 0;
 	framesCounter = 0;
 	framesSpeed = 0;
@@ -22,6 +23,44 @@ GameManager::GameManager():player()
 	playerImg = { 0 };
 }
 
+void GameManager::InitData()
+{	
+	if (isDataCleared == false)
+	{
+		gameTime = 0;
+		result = NONE;
+		score = 0;
+		player.ResetPlayer();
+
+		for (size_t i = 0; i < enemies.size(); i++)
+		{
+			enemies.erase(enemies.begin() + i);
+		}
+
+		for (size_t i = 0; i < enemyPtr.size(); i++)
+		{
+			enemyPtr.erase(enemyPtr.begin() + i);
+		}
+
+		for (size_t i = 0; i < bricks.size(); i++)
+		{
+			bricks.erase(bricks.begin() + i);
+		}
+
+		for (size_t i = 0; i < ladders.size(); i++)
+		{
+			ladders.erase(ladders.begin() + i);
+		}
+
+		for (size_t i = 0; i < pickups.size(); i++)
+		{
+			pickups.erase(pickups.begin() + i);
+		}
+
+		isDataCleared = true;
+	}
+}
+
 void GameManager::InitTextures()
 {
 	mapImg = LoadImage("resources/Maps/Custom_L2.png");
@@ -29,6 +68,8 @@ void GameManager::InitTextures()
 
 	winScreen = LoadTexture("resources/Maps/WIN.png");
 	loseScreen = LoadTexture("resources/Maps/LOSE.png");
+	titleScreen = LoadTexture("resources/Menu/TITLE.png");
+	logoScreen = LoadTexture("resources/Menu/splash.png");
 	
 	playerTextRight[0] = LoadTexture("resources/Characters/Right.png");
 	playerTextRight[1] = LoadTexture("resources/Characters/Right1.png");
