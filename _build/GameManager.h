@@ -11,7 +11,7 @@
 #include "PickUp.h"
 #include <vector>
 
-enum CurrentScreen { LOGO, TITLE, GAMEPLAY, ENDING };
+enum CurrentScreen { LOGO, OPTIONS, TITLE, GAMEPLAY, ENDING };
 enum GameResult { NONE, WIN, LOSE };
 
 class GameManager

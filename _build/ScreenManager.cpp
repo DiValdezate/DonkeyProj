@@ -12,20 +12,42 @@ void ScreenManager::ScreenLogic(GameManager* gm)
 {
 	switch (gm->screen)
 	{
-	case LOGO:
-		gm->InitData();
-		if (gm->gameTime > 12)
+	case LOGO:		
+		if (gm->gameTime > 120)
 			gm->screen = TITLE;
 
 		break;
 
 	case TITLE:
+		if (IsKeyPressed(KEY_ENTER))
+			gm->screen = GAMEPLAY;
+
+		if (IsKeyPressed(KEY_O))
+			gm->screen = OPTIONS;
+
 		break;
+
+	case OPTIONS:
+		if (IsKeyPressed(KEY_ENTER))
+			gm->screen = TITLE;
+		break;
+
 
 	case GAMEPLAY:
 		break;
 
 	case ENDING:
+		if (IsKeyPressed(KEY_ENTER))
+		{
+			gm->screen = TITLE;
+			gm->InitData();
+		}
+
+		if (IsKeyPressed(KEY_O))
+		{
+			gm->screen = OPTIONS;
+			gm->InitData();
+		}
 		break;
 
 	}
@@ -48,10 +70,25 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 	case TITLE:
 		ClearBackground(BLACK);
 		DrawTextureEx(gm->titleScreen, { 130,70 }, 0, 1, WHITE);
-		DrawText("Press [START] to start playing", 180, 400, 20, WHITE);
+		DrawText("by Diego V.", 300, 410, 18, WHITE);
+		if(gm->gameTime % 60 == 0 || gm->gameTime % 61 == 0 || gm->gameTime % 62 == 0)
+			DrawText("Press [START] to start playing", 180, 500, 20, WHITE);
+
+		DrawText("Press [O] to show instructions", 185, 570, 20, WHITE);
 
 		break;
+	case OPTIONS:
+		ClearBackground(BLACK);
+		DrawText("SAVE THE PRINCESS!", 180, 200, 30, WHITE);
+		DrawText("Collect ITEMS to get extra points", 100, 250, 30, WHITE);
+		DrawText("Use ARROWS to move", 180, 400, 30, DARKGREEN);
+		DrawText("Press SPACE to jump", 180, 450, 30, DARKGREEN);
+		
 
+		DrawText("[START] to go to menu ", 220, 600, 20, DARKGREEN);
+
+
+		break;
 	case GAMEPLAY:
 
 		DrawTextureEx(gm->mapTexture, {0,0},0,1, WHITE);
@@ -113,14 +150,14 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 			DrawText("FINAL SCORE: ", 250, 400, 20, WHITE);
 			DrawText(finalscoreTxt, 420, 400, 20, WHITE);
 			DrawText("PRESS [ENTER] TO GO TO THE MENU", 150, 550, 20, WHITE);
-			DrawText("PRESS [ESC] TO QUIT", 250, 600, 20, WHITE);
+			DrawText("PRESS [ESC] TO SEE INSTRUCTIONS", 250, 600, 20, WHITE);
 			break;
 		case LOSE:
 			DrawTextureEx(gm->loseScreen, { -180,-50 }, 0, 10, WHITE);
 			DrawText("FINAL SCORE: ", 250, 400, 20, WHITE);
 			DrawText(finalscoreTxt, 420, 400, 20, WHITE);
 			DrawText("PRESS [ENTER] TO TRY AGAIN", 200, 550, 20, WHITE);
-			DrawText("PRESS [ESC] TO QUIT", 250, 600, 20, WHITE);
+			DrawText("PRESS [O] TO SEE INSTRUCTIONS", 250, 600, 20, WHITE);
 			break;
 		}
 

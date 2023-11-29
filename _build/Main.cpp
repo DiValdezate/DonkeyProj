@@ -60,8 +60,6 @@ int main(void)
         // UPDATE
         //----------------------------------------------------------------------------------
         screenManager.ScreenLogic(&gManager);
-        std::cout << "   ";
-        std::cout << gManager.gameTime;
 
         if (gManager.screen == GAMEPLAY)
             gpManager.GameplayLogic(&gManager);

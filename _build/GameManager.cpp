@@ -25,40 +25,29 @@ GameManager::GameManager():player()
 
 void GameManager::InitData()
 {	
-	if (isDataCleared == false)
+
+	gameTime = 0;
+	result = NONE;
+	score = 0;
+	player.ResetPlayer();
+
+
+	for (size_t i = 0; i < enemyPtr.size(); i++)
 	{
-		gameTime = 0;
-		result = NONE;
-		score = 0;
-		player.ResetPlayer();
+		Enemy* ptr = enemyPtr[i];
 
-		for (size_t i = 0; i < enemies.size(); i++)
-		{
-			enemies.erase(enemies.begin() + i);
-		}
-
-		for (size_t i = 0; i < enemyPtr.size(); i++)
+		if (Fire* fEnemy = dynamic_cast<Fire*>(ptr))
 		{
 			enemyPtr.erase(enemyPtr.begin() + i);
 		}
-
-		for (size_t i = 0; i < bricks.size(); i++)
-		{
-			bricks.erase(bricks.begin() + i);
-		}
-
-		for (size_t i = 0; i < ladders.size(); i++)
-		{
-			ladders.erase(ladders.begin() + i);
-		}
-
-		for (size_t i = 0; i < pickups.size(); i++)
-		{
-			pickups.erase(pickups.begin() + i);
-		}
-
-		isDataCleared = true;
 	}
+
+	for (size_t i = 0; i < pickups.size(); i++)
+	{
+		pickups.erase(pickups.begin() + i);
+	}
+
+	LoadPickUps();
 }
 
 void GameManager::InitTextures()
