@@ -70,7 +70,7 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 void GameplayManager::UpdatePlayer(GameManager* gm)
 {	
 	gm->lives = gm->player.GetLives();
-	if (gm->lives <= 0)
+	if (gm->lives <= 0 || gm->player.GetPosition().y > (float)GetScreenHeight())
 	{
 		gm->screen = ENDING;
 		gm->result = LOSE;
@@ -205,6 +205,12 @@ void GameplayManager::MoveEnemies(GameManager* gm)
 			Enemy* ptr = gm->enemyPtr[i];			
 
 			ptr->Move();
+			if (Barrel* bEnemy = dynamic_cast<Barrel*>(ptr))
+			{
+				if (bEnemy->barrelTime > 280)
+					gm->enemyPtr.erase(gm->enemyPtr.begin() + i);
+			}
+				
 		}
 		
 	}

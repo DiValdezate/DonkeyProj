@@ -53,11 +53,6 @@ void ScreenManager::ScreenLogic(GameManager* gm)
 	}
 }
 
-void ScreenManager::DrawHUD(GameManager* gm)
-{
-
-
-}
 
 void ScreenManager::ScreenDrawer(GameManager* gm)
 {
@@ -150,14 +145,14 @@ void ScreenManager::ScreenDrawer(GameManager* gm)
 			DrawText("FINAL SCORE: ", 250, 400, 20, WHITE);
 			DrawText(finalscoreTxt, 420, 400, 20, WHITE);
 			DrawText("PRESS [ENTER] TO GO TO THE MENU", 150, 550, 20, WHITE);
-			DrawText("PRESS [ESC] TO SEE INSTRUCTIONS", 250, 600, 20, WHITE);
+			DrawText("PRESS [O] TO SEE INSTRUCTIONS", 180, 600, 20, WHITE);
 			break;
 		case LOSE:
 			DrawTextureEx(gm->loseScreen, { -180,-50 }, 0, 10, WHITE);
 			DrawText("FINAL SCORE: ", 250, 400, 20, WHITE);
 			DrawText(finalscoreTxt, 420, 400, 20, WHITE);
 			DrawText("PRESS [ENTER] TO TRY AGAIN", 200, 550, 20, WHITE);
-			DrawText("PRESS [O] TO SEE INSTRUCTIONS", 250, 600, 20, WHITE);
+			DrawText("PRESS [O] TO SEE INSTRUCTIONS", 180, 600, 20, WHITE);
 			break;
 		}
 

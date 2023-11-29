@@ -1,2 +1,3 @@
-﻿  ScreenManager.cpp
+﻿  GameplayManager.cpp
+C:\Dev\PACS\DonkeyProj\_build\GameplayManager.cpp(300,21): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
   DonkeyProj.vcxproj -> C:\Dev\PACS\DonkeyProj\_bin\Debug\DonkeyProj.exe

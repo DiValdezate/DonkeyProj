@@ -8,6 +8,7 @@ class Barrel : public Enemy
 {
 public:
 	static int barrelCount;
+	int barrelTime;
 
 public:
 	Barrel(float x, float y);

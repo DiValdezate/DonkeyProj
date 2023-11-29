@@ -7,10 +7,6 @@ PickUp::PickUp(PickUpType type)
 	radius = 0;
 	texture = { 0 };
 	points = 0;
-
-
-
-
 }
 
 void PickUp::SetUpItem()
