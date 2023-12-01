@@ -60,6 +60,7 @@ public:
 	Texture2D barrel[4];
 	Texture2D bag;
 	Texture2D umbrella;
+	Texture2D chicken;
 	Texture2D peach;
 	Texture2D playerDeath[4];
 	Texture2D playerDeathIdle;

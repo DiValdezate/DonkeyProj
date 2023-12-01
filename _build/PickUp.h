@@ -1,7 +1,7 @@
 #pragma once
 #include <raylib.h>
 
-enum PickUpType{UMBRELLA, BAG, PEACH};
+enum PickUpType{UMBRELLA, BAG, CHICKEN, PEACH};
 
 class PickUp
 {

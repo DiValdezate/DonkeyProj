@@ -207,7 +207,7 @@ void GameplayManager::MoveEnemies(GameManager* gm)
 			ptr->Move();
 			if (Barrel* bEnemy = dynamic_cast<Barrel*>(ptr))
 			{
-				if (bEnemy->barrelTime > 280)
+				if (bEnemy->barrelTime > 280) //If the enemy is a barrel, this will erase it from the vector after 4-5 seconds, so they do not stack forever.
 					gm->enemyPtr.erase(gm->enemyPtr.begin() + i);
 			}
 				

@@ -17,9 +17,13 @@ void PickUp::SetUpItem()
 		radius = 15.0f;
 		points = 100;
 		break;
+	case CHICKEN:
+		radius = 15.0f;
+		points = 200;
+		break;
 	case BAG:
 		radius = 15.0f;
-		points = 150;
+		points = 300;
 		break;
 	case PEACH:
 		radius = 25.0f;

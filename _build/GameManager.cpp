@@ -114,11 +114,12 @@ void GameManager::InitTextures()
 
 	bag = LoadTexture("resources/Characters/bag.png");
 	umbrella = LoadTexture("resources/Characters/umbrella.png");
+	chicken = LoadTexture("resources/Characters/chicken.png");
 	peach = LoadTexture("resources/Characters/Peach.png");
 }
 
 
-void GameManager::LoadMap()
+void GameManager::LoadMap()//Loads the floor and the ladders of every floor
 {
 	Brick aux(0, 0);
 	Ladder auxL(0, 0);
@@ -302,6 +303,11 @@ void GameManager::LoadPickUps()
 	item2.position = {300,625};
 	item2.texture = umbrella;
 
+	PickUp item3(CHICKEN);
+	item3.SetUpItem();
+	item3.position = { 520,510 };
+	item3.texture = chicken;
+
 	PickUp win(PEACH);
 	win.SetUpItem();
 	win.position = {300,115};
@@ -309,5 +315,6 @@ void GameManager::LoadPickUps()
 
 	pickups.push_back(item);
 	pickups.push_back(item2);
+	pickups.push_back(item3);
 	pickups.push_back(win);
 }
