@@ -267,6 +267,7 @@
     <ClInclude Include="Barrel.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Brick.h" />
+    <ClInclude Include="Cake.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Fire.h" />
     <ClInclude Include="GameManager.h" />
@@ -282,6 +283,7 @@
     <ClCompile Include="Barrel.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Brick.cpp" />
+    <ClCompile Include="Cake.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Fire.cpp" />
     <ClCompile Include="GameManager.cpp" />

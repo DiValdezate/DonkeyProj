@@ -111,6 +111,7 @@ void GameManager::InitTextures()
 
 
 	oil = LoadTexture("resources/Characters/Oil.png");
+	cake = LoadTexture("resources/Characters/cake.png");
 
 	bag = LoadTexture("resources/Characters/bag.png");
 	umbrella = LoadTexture("resources/Characters/umbrella.png");

@@ -9,6 +9,7 @@
 #include "Boss.h"
 #include "Barrel.h"
 #include "PickUp.h"
+#include "Cake.h"
 #include <vector>
 
 enum CurrentScreen { LOGO, OPTIONS, TITLE, GAMEPLAY, ENDING };
@@ -58,6 +59,7 @@ public:
 	Texture2D ghostLeft[4];
 	Texture2D boss[4];
 	Texture2D barrel[4];
+	Texture2D cake;
 	Texture2D bag;
 	Texture2D umbrella;
 	Texture2D chicken;

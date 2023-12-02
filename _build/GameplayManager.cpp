@@ -192,6 +192,13 @@ void GameplayManager::RandomEnemySpawner(GameManager* gm)
 			gm->enemies.push_back(*barrel);
 			gm->enemyPtr.push_back(barrel);
 		}
+
+		if (gm->gameTime % 120 == 0)
+		{
+			Enemy* cake = new Cake();
+			cake->SetTexture(gm->cake);
+			gm->enemyPtr.push_back(cake);
+		}
 	
 }
 
