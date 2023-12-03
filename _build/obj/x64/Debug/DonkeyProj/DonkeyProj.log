@@ -1,8 +1,2 @@
 ﻿  Cake.cpp
-  GameManager.cpp
-  GameplayManager.cpp
-C:\Dev\PACS\DonkeyProj\_build\GameplayManager.cpp(307,21): warning C4244: '+=': conversión de 'float' a 'int'; posible pérdida de datos
-  Main.cpp
-  ScreenManager.cpp
-  Generando código...
   DonkeyProj.vcxproj -> C:\Dev\PACS\DonkeyProj\_bin\Debug\DonkeyProj.exe

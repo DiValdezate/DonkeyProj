@@ -319,3 +319,62 @@ void GameManager::LoadPickUps()
 	pickups.push_back(item3);
 	pickups.push_back(win);
 }
+
+void GameManager::UnloadData()
+{
+
+	enemyPtr.clear();
+
+	UnloadTexture(winScreen);
+	UnloadTexture(titleScreen);
+	UnloadTexture(logoScreen);
+	UnloadTexture(loseScreen);
+	UnloadTexture(oil);
+	UnloadTexture(peach);
+	UnloadTexture(chicken);
+	UnloadTexture(umbrella);
+	UnloadTexture(bag);
+	UnloadTexture(cake);
+	UnloadTexture(playerDeathIdle);
+
+	UnloadTexture(playerDeath[0]);
+	UnloadTexture(playerDeath[1]);
+	UnloadTexture(playerDeath[2]);
+	UnloadTexture(playerDeath[3]);
+	UnloadTexture(playerTextRight[0]);
+	UnloadTexture(playerTextRight[1]);
+	UnloadTexture(playerTextRight[2]);
+	UnloadTexture(playerTextRight[3]);
+	UnloadTexture(playerTextLeft[0]);
+	UnloadTexture(playerTextLeft[1]);
+	UnloadTexture(playerTextLeft[2]);
+	UnloadTexture(playerTextLeft[3]);
+	UnloadTexture(playerClimb[0]);
+	UnloadTexture(playerClimb[1]);
+	UnloadTexture(playerClimb[2]);
+	UnloadTexture(playerClimb[3]);
+	UnloadTexture(fireRight[0]);
+	UnloadTexture(fireRight[1]);
+	UnloadTexture(fireRight[2]);
+	UnloadTexture(fireRight[3]);
+	UnloadTexture(fireLeft[0]);
+	UnloadTexture(fireLeft[1]);
+	UnloadTexture(fireLeft[2]);
+	UnloadTexture(fireLeft[3]);
+	UnloadTexture(ghostRight[0]);
+	UnloadTexture(ghostRight[1]);
+	UnloadTexture(ghostRight[2]);
+	UnloadTexture(ghostRight[3]);
+	UnloadTexture(ghostLeft[0]);
+	UnloadTexture(ghostLeft[1]);
+	UnloadTexture(ghostLeft[2]);
+	UnloadTexture(ghostLeft[3]);
+	UnloadTexture(boss[0]);
+	UnloadTexture(boss[1]);
+	UnloadTexture(boss[2]);
+	UnloadTexture(boss[3]);
+	UnloadTexture(barrel[0]);
+	UnloadTexture(barrel[1]);
+	UnloadTexture(barrel[2]);
+	UnloadTexture(barrel[3]);
+}

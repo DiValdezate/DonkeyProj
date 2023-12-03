@@ -44,9 +44,6 @@ public:
 	Texture2D GetTexture();
 	void SetTexture(Texture2D* texture);
 
-	float GetRotation();
-	void SetRotation(float rotation);	
-
 	void SetHitBox(float x, float y, float width, float height);
 	Rectangle GetHitbox();
 	void UpdateHitBox();
@@ -63,13 +60,8 @@ public:
 
 	Orientation GetOrientation();
 
-
-	bool isAlive();
-	void Kill();
 	void Hit();
 	void Move(KeyboardKey key);
-	void TurnLeft();
-	void TurnRight();
 	void SetMoving(bool value);
 	bool CanMove();
 	bool HitTime();

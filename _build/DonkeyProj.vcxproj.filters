@@ -48,7 +48,9 @@
     <ClInclude Include="PickUp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Cake.h" />
+    <ClInclude Include="Cake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ScreenManager.cpp">
@@ -90,6 +92,8 @@
     <ClCompile Include="PickUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Cake.cpp" />
+    <ClCompile Include="Cake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -193,7 +193,7 @@ void GameplayManager::RandomEnemySpawner(GameManager* gm)
 			gm->enemyPtr.push_back(barrel);
 		}
 
-		if (gm->gameTime % 120 == 0)
+		if (gm->gameTime % 180 == 0) //spawns a random cake every three seconds
 		{
 			Enemy* cake = new Cake();
 			cake->SetTexture(gm->cake);
@@ -217,6 +217,12 @@ void GameplayManager::MoveEnemies(GameManager* gm)
 				if (bEnemy->barrelTime > 280) //If the enemy is a barrel, this will erase it from the vector after 4-5 seconds, so they do not stack forever.
 					gm->enemyPtr.erase(gm->enemyPtr.begin() + i);
 			}
+			if (Cake* cEnemy = dynamic_cast<Cake*>(ptr))
+			{
+				if (cEnemy->cakeTime > 340) //If the enemy is a cake, this will erase it from the vector after 4-5 seconds, so they do not stack forever.
+					gm->enemyPtr.erase(gm->enemyPtr.begin() + i);
+			}
+			
 				
 		}
 		
@@ -234,7 +240,7 @@ void GameplayManager::UpdateEnemyAnim(GameManager* gm)
 	if (gm->currentFrame > 3)
 		gm->currentFrame = 0;
 
-	for (int i = 0; i < gm->enemyPtr.size(); i++)
+	for (int i = 0; i < gm->enemyPtr.size(); i++) //Loops through the enemies vector and checks the subclass of every enemy. 
 	{
 		if (gm->enemyPtr[i] != nullptr)
 		{

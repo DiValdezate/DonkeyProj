@@ -11,7 +11,7 @@ public:
 	Vector2 position;
 	float radius;
 	Texture2D texture;
-	float points;
+	int points;
 
 public:
 

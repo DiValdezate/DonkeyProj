@@ -62,13 +62,8 @@ int main(void)
         screenManager.ScreenLogic(&gManager);
 
         if (gManager.screen == GAMEPLAY)
-            gpManager.GameplayLogic(&gManager);
-
-      
+            gpManager.GameplayLogic(&gManager);   
     
-
-
-
 
 
         // DRAW
@@ -92,7 +87,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-
+    gManager.UnloadData();
 
     CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------

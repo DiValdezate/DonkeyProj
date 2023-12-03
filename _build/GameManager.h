@@ -78,6 +78,6 @@ public:
 	void LoadMap();
 	void LoadEnemies();
 	void LoadPickUps();
-
+	void UnloadData();
 };
 

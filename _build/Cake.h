@@ -7,6 +7,7 @@ class Cake : public Enemy
 {
 public:
 	static int cakeCount;
+	int cakeTime;
 
 
 public:
