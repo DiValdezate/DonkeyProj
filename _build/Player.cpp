@@ -159,21 +159,6 @@ bool Player::CanMove()
 void Player::Hit()
 {
 	canMove = false;
-	if (lives > 0)
-	{	
-
-	}
-	else
-	{
-		Kill();
-	}
-}
-
-void Player::Kill()
-{
-	
-
-
 }
 
 bool Player::HitTime()

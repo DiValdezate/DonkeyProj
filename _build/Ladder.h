@@ -2,7 +2,7 @@
 #include "MapElements.h"
 
 #define LADDER_WIDTH 5
-#define LADDER_HEIGHT 130
+#define LADDER_HEIGHT 145
 
 class Ladder : public MapElements
 {
