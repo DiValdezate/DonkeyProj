@@ -1,0 +1,13 @@
+﻿  raudio.c
+  rcore.c
+C:\Dev\PACS\DonkeyProj\raylib-master\src\external\rprand.h(189,15): warning C4018: '>': no coinciden signed/unsigned
+C:\Dev\PACS\DonkeyProj\raylib-master\src\external\rprand.h(201,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Dev\PACS\DonkeyProj\raylib-master\src\rcore.c(2466,23): warning C4018: '<': no coinciden signed/unsigned
+  rglfw.c
+  rmodels.c
+  rshapes.c
+  rtext.c
+  rtextures.c
+  utils.c
+  Generando código...
+  raylib.vcxproj -> C:\Dev\PACS\DonkeyProj\_bin\Release\raylib.lib
