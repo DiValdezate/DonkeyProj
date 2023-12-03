@@ -57,9 +57,9 @@ void GameplayManager::UpdatePlayerAnim(GameManager* gm, KeyboardKey key)
 		}
 	}	
 
-	if (gm->player.CanMove() == false)
+	if (gm->player.CanMove() == false && gm->player.hitTime < 60)
 		gm->player.SetTexture(&gm->playerDeath[gm->currentFrame]);
-	if (gm->player.hitTime > 60 && gm->player.hitTime < 180)
+	if (gm->player.hitTime > 60 && gm->player.hitTime < 240)
 		gm->player.SetTexture(&gm->playerDeathIdle);
 
 
@@ -157,6 +157,13 @@ void GameplayManager::UpdatePlayer(GameManager* gm)
 
 	if (player->CanMove() == false)
 		player->HitTime();
+
+	if (player->IsInvincible() && player->invTime < 240)
+		player->invTime++;
+	else
+	{
+		player->SetInvincible(false);
+	}
 }
 
 void GameplayManager::RandomEnemySpawner(GameManager* gm)
@@ -297,8 +304,12 @@ void GameplayManager::CheckCollisions(GameManager* gm)
 			Enemy* ptr = gm->enemyPtr[i];
 
 			if (CheckCollisionCircleRec({ ptr->GetPosition().x + 15, ptr->GetPosition().y + 15 }, ptr->GetRadius(), gm->player.GetHitbox()))
-			{					
-				gm->player.Hit();					
+			{			
+				if (gm->player.IsInvincible() == false)
+				{
+					gm->player.Hit();
+					gm->player.SetInvincible(true);
+				}
 			}
 
 		}

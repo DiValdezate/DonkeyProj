@@ -24,12 +24,14 @@ class Player
 	bool canMove;
 	bool canJump;
 	bool onLadder;
+	bool invincible;
 
 	Ladder* ladder;
 	
 public:
 
 	int hitTime;
+	int invTime;
 
 public:
 	
@@ -57,6 +59,7 @@ public:
 	void SetOnLadder(bool value, Ladder* ladder);
 	bool GetOnLadder();
 
+	void SetInvincible(bool value);
 
 	Orientation GetOrientation();
 
@@ -65,6 +68,7 @@ public:
 	void SetMoving(bool value);
 	bool CanMove();
 	bool HitTime();
+	bool IsInvincible();
 	void ResetPlayer();
 };
 

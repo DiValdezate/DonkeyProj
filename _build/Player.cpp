@@ -10,14 +10,15 @@ Player::Player()
 	position = { 0 };
 	texture = { 0 };	
 	rotation = 0.0f;
-	canMove = true;;
+	canMove = true;
+	invincible = false;
 	hitBox.width = 20;
 	hitBox.height = 30;
 	canJump = true;
 	onLadder = false;
 	ladder = NULL;
 	hitTime = 0;
-	
+	invTime = 0;	
 };
 
 void Player::SetLives(int lives)
@@ -158,7 +159,15 @@ bool Player::CanMove()
 
 void Player::Hit()
 {
-	canMove = false;
+	if(invincible == false)
+		canMove = false;
+}
+
+void Player::SetInvincible(bool value)
+{
+	invincible = value;
+	if (!value)
+		invTime = 0;
 }
 
 bool Player::HitTime()
@@ -174,6 +183,11 @@ bool Player::HitTime()
 	}
 
 	return true;
+}
+
+bool Player::IsInvincible()
+{
+	return invincible;
 }
 
 void Player::ResetPlayer()
